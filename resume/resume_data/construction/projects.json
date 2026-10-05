@@ -1,0 +1,46 @@
+[
+  {
+    "name": "Downtown Office Complex",
+    "description": "Managed construction of 15-story office building with retail space. Coordinated 50+ subcontractors and maintained schedule.",
+    "technologies": ["AutoCAD", "Project Management", "Safety Protocols", "Quality Control"],
+    "status": "completed",
+    "highlights": [
+      "Completed 2 weeks ahead of schedule",
+      "Zero safety incidents over 18-month project",
+      "$25M project delivered under budget"
+    ]
+  },
+  {
+    "name": "Residential Development Phase II",
+    "description": "Site supervisor for 120-unit residential development including utilities, roads, and landscaping.",
+    "technologies": ["Site Planning", "Utility Installation", "Concrete Work", "Team Leadership"],
+    "status": "completed",
+    "highlights": [
+      "Managed team of 30+ workers",
+      "Achieved 98% quality score on final inspection",
+      "Improved efficiency protocols adopted company-wide"
+    ]
+  },
+  {
+    "name": "Hospital Renovation Project",
+    "description": "Lead construction manager for critical hospital renovation while maintaining 24/7 operations.",
+    "technologies": ["Healthcare Construction", "Infection Control", "Scheduling", "Coordination"],
+    "status": "in-progress",
+    "highlights": [
+      "Zero disruption to hospital operations",
+      "Specialized in healthcare construction protocols",
+      "Managing $12M renovation budget"
+    ]
+  },
+  {
+    "name": "Green Building Initiative",
+    "description": "Supervised construction of LEED Platinum certified office building with sustainable materials and methods.",
+    "technologies": ["Sustainable Construction", "LEED Standards", "Green Materials", "Energy Systems"],
+    "status": "completed",
+    "highlights": [
+      "First LEED Platinum building in city",
+      "30% reduction in construction waste",
+      "Featured in Green Building Magazine"
+    ]
+  }
+]

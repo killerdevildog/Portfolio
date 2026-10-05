@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Quaylyn Rimer - Resume</title>
+    <link rel="stylesheet" href="resume.css?v=20260907-2">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Resume JavaScript -->
+    
+</head>
+<body>
+    <!-- Resume Type Selector -->
+    <div class="resume-selector" id="resumeSelector">
+        <div class="selector-content">
+            <label for="resumeTypeSelect">
+                <i class="fas fa-briefcase"></i>
+                Resume Type:
+            </label>
+            <select id="resumeTypeSelect" disabled onchange="changeResumeType()">
+                <!-- Options will be populated by JavaScript -->
+            </select>
+        </div>
+    </div>
+
+    <!-- Download Button -->
+    <div class="download-button" id="downloadButton">
+        <button id="downloadPdfButton" type="button" onclick="downloadResume()" disabled aria-describedby="pdfStatus">
+            <i class="fas fa-download"></i>
+            <span id="downloadPdfLabel">Loading résumé…</span>
+        </button>
+        <p id="pdfStatus" role="status" aria-live="polite"></p>
+    </div>
+
+    <!-- Back Button -->
+    <div class="back-button" id="backButton">
+        <button onclick="goBackToPortfolio()">
+            <i class="fas fa-arrow-left"></i>
+            Back to Portfolio
+        </button>
+    </div>
+
+    <!-- Color Theme Selector -->
+    <div class="theme-selector" id="themeSelector">
+        <label for="themeSelect">Color Theme:</label>
+        <select id="themeSelect" disabled>
+            <option value="default">Professional</option>
+            <option value="original">Original (Purple Education)</option>
+            <option value="modern">Modern</option>
+            <option value="corporate">Corporate</option>
+            <option value="creative">Creative</option>
+            <option value="minimal">Minimal</option>
+        </select>
+    </div>
+
+    <div class="resume-container">
+        <!-- Header Section -->
+        <header class="resume-header">
+            <div class="header-content">
+                <div class="personal-info">
+                    <h1 class="name">Quaylyn Rimer</h1>
+                    <h2 class="title" id="professional-title">Full Stack Developer & Software Engineer</h2>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>quaylyn.rimer@email.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <span>github.com/killerdevildog</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Virgin, UT 84779</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-photo">
+                    <img src="../assets/img/profileq.jpg" alt="Quaylyn Rimer" class="profile-img">
+                </div>
+            </div>
+        </header>
+
+        <!-- Skills Section -->
+        <section class="section skills-section">
+            <h3 class="section-title">Technical Skills</h3>
+            <div class="skills-grid" id="skills-grid">
+                <!-- Skills will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Experience/Projects Section -->
+        <section class="section projects-section">
+            <h3 class="section-title">Featured Projects & Contributions</h3>
+            <div class="projects-container" id="projects-container">
+                <!-- Projects will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Pull Requests & Open Source -->
+        <section class="section opensource-section">
+            <h3 class="section-title" id="contributions-title">Open Source Contributions</h3>
+            <div class="opensource-stats" id="opensource-stats">
+                <!-- PR stats will be populated by JavaScript -->
+            </div>
+            <div class="featured-prs" id="featured-prs">
+                <!-- Featured PRs will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Education & Certifications -->
+        <section class="section education-section">
+            <h3 class="section-title">Education & Professional Development</h3>
+            <div class="education-container" id="education-container">
+                <!-- Education will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Programming Journey -->
+        <section class="section journey-section">
+            <h3 class="section-title" id="timeline-title">Programming Journey</h3>
+            <div class="journey-timeline" id="journey-timeline">
+                <!-- Journey will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- References Section -->
+        <section class="section references-section">
+            <h3 class="section-title">References</h3>
+            <div class="references-grid" id="references-grid">
+                <!-- References will be populated by JavaScript -->
+            </div>
+        </section>
+    </div>
+
+    <script src="resume-pdf.js?v=20260907-2" defer></script>
+    <script src="resume.js?v=20260907" defer></script>
+</body>
+</html>

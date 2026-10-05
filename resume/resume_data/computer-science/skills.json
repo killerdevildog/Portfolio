@@ -1,0 +1,35 @@
+{
+  "languages": [
+    {
+      "category": "Programming Languages",
+      "skills": [
+        { "name": "Python", "level": 95, "years": 5 },
+        { "name": "Java", "level": 90, "years": 4 },
+        { "name": "C++", "level": 85, "years": 3 },
+        { "name": "JavaScript", "level": 80, "years": 3 },
+        { "name": "R", "level": 75, "years": 2 },
+        { "name": "MATLAB", "level": 70, "years": 2 }
+      ]
+    },
+    {
+      "category": "Algorithms & Data Structures",
+      "skills": [
+        { "name": "Algorithm Design", "level": 95, "years": 4 },
+        { "name": "Time Complexity Analysis", "level": 90, "years": 4 },
+        { "name": "Graph Algorithms", "level": 85, "years": 3 },
+        { "name": "Dynamic Programming", "level": 85, "years": 3 },
+        { "name": "Machine Learning Algorithms", "level": 80, "years": 2 }
+      ]
+    },
+    {
+      "category": "Research & Academic",
+      "skills": [
+        { "name": "Technical Writing", "level": 90, "years": 4 },
+        { "name": "Data Analysis", "level": 85, "years": 3 },
+        { "name": "Statistical Modeling", "level": 80, "years": 3 },
+        { "name": "Research Methodology", "level": 85, "years": 3 },
+        { "name": "Peer Review", "level": 75, "years": 2 }
+      ]
+    }
+  ]
+}

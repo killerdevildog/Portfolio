@@ -1,0 +1,44 @@
+[
+  {
+    "institution": "CyberSec Institute",
+    "degree": "Master of Science in Cybersecurity",
+    "field": "Information Security",
+    "graduationDate": "2024",
+    "gpa": "3.9/4.0",
+    "honors": ["Summa Cum Laude", "Outstanding Graduate Student"],
+    "relevantCoursework": [
+      "Network Security",
+      "Ethical Hacking",
+      "Digital Forensics",
+      "Cryptography",
+      "Risk Management",
+      "Incident Response"
+    ],
+    "projects": [
+      {
+        "name": "Advanced Persistent Threat Detection",
+        "description": "Developed ML-based system for detecting APT attacks in enterprise networks"
+      }
+    ]
+  },
+  {
+    "institution": "Tech University",
+    "degree": "Bachelor of Science in Computer Science",
+    "field": "Computer Science with Security Focus",
+    "graduationDate": "2022",
+    "gpa": "3.7/4.0",
+    "honors": ["Magna Cum Laude", "Dean's List"],
+    "relevantCoursework": [
+      "Computer Networks",
+      "Operating Systems Security",
+      "Database Security",
+      "Software Security",
+      "System Administration"
+    ],
+    "certifications": [
+      "CompTIA Security+",
+      "Certified Ethical Hacker (CEH)",
+      "CISSP Associate"
+    ]
+  }
+]

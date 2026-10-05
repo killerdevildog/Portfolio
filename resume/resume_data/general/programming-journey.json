@@ -1,0 +1,38 @@
+[
+  {
+    "year": "2018",
+    "title": "Started College Journey",
+    "description": "Began college studies while working part-time in retail, developing customer service and multitasking skills.",
+    "technologies": ["Customer Service", "Time Management", "Basic Computer Skills"]
+  },
+  {
+    "year": "2019",
+    "title": "Administrative Assistant Role",
+    "description": "Took on administrative responsibilities, learning office management and business communication.",
+    "technologies": ["Microsoft Office", "Data Entry", "Phone Systems", "Filing Systems"]
+  },
+  {
+    "year": "2020",
+    "title": "Team Lead Promotion",
+    "description": "Promoted to team lead position, gained experience in supervision and training new employees.",
+    "technologies": ["Leadership", "Training", "Scheduling", "Performance Management"]
+  },
+  {
+    "year": "2022",
+    "title": "Business Graduate",
+    "description": "Completed business degree and began applying analytical skills in professional environment.",
+    "technologies": ["Business Analysis", "Project Management", "Strategic Thinking"]
+  },
+  {
+    "year": "2023",
+    "title": "Project Coordinator",
+    "description": "Advanced to project coordination role, managing cross-functional teams and client relationships.",
+    "technologies": ["Project Management Software", "Client Relations", "Process Improvement"]
+  },
+  {
+    "year": "2024",
+    "title": "Business Analyst",
+    "description": "Current role as business analyst, using data-driven insights to improve organizational efficiency.",
+    "technologies": ["Data Analysis", "Process Optimization", "Stakeholder Management", "Reporting"]
+  }
+]

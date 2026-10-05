@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Susan Parker",
+    "title": "Operations Manager",
+    "company": "Regional Business Solutions",
+    "email": "s.parker@rbs.com",
+    "phone": "(555) 321-4567",
+    "relationship": "Direct Supervisor"
+  },
+  {
+    "name": "Michael Brown",
+    "title": "Small Business Owner",
+    "company": "Brown's Local Market",
+    "email": "m.brown@brownsmarket.com",
+    "phone": "(555) 432-5678",
+    "relationship": "Consulting Client"
+  },
+  {
+    "name": "Dr. Jennifer Adams",
+    "title": "Professor of Business",
+    "company": "State University",
+    "email": "j.adams@university.edu",
+    "phone": "(555) 543-6789",
+    "relationship": "Academic Reference"
+  }
+]

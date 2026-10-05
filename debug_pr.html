@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Accepted Contribution Data</title></head>
+<body>
+<h1>Accepted Contribution Data</h1>
+<p id="summary">Loading...</p>
+<ul id="contributions"></ul>
+<script>
+async function loadContributions() {
+  try {
+    const response = await fetch('pull_requests.json');
+    if (!response.ok) throw new Error('Unable to load contributions');
+    const data = await response.json();
+    const prs = data.pull_requests.filter(pr => pr.state === 'merged' && pr.merged_at && pr.number > 0 && pr.url.includes('/pull/') && pr.repository.owner.toLowerCase() !== data.metadata.username.toLowerCase());
+    document.getElementById('summary').textContent = `${prs.length} merged pull requests across ${new Set(prs.map(pr => pr.repository.full_name)).size} upstream projects.`;
+    for (const pr of prs) {
+      const item = document.createElement('li');
+      const link = document.createElement('a');
+      link.href = pr.url;
+      link.textContent = `${pr.repository.full_name} #${pr.number}: ${pr.title}`;
+      item.appendChild(link);
+      document.getElementById('contributions').appendChild(item);
+    }
+  } catch (error) {
+    document.getElementById('summary').textContent = error.message;
+  }
+}
+loadContributions();
+</script>
+</body>
+</html>

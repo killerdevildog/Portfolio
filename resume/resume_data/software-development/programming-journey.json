@@ -1,0 +1,22 @@
+[
+  {
+    "year": "2009",
+    "title": "First Program",
+    "description": "The beginning of my coding adventure"
+  },
+  {
+    "year": "2013",
+    "title": "Python Programming",
+    "description": "Transition to high-level programming"
+  },
+  {
+    "year": "2016",
+    "title": "OpenGL Programming",
+    "description": "Advanced graphics programming"
+  },
+  {
+    "year": "2018",
+    "title": "Web Development & Modern Frameworks",
+    "description": "Full-stack web development mastery"
+  }
+]

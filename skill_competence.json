@@ -1,0 +1,38 @@
+{
+  "competence": {
+    "HTML": 95,
+    "CSS": 88,
+    "JavaScript": 82,
+    "C++": 92,
+    "Python": 70,
+    "PHP": 65,
+    "C": 60,
+    "CMake": 45,
+    "Shell": 55,
+    "Photoshop": 55
+  },
+  "description": "Technical competence levels across programming languages, frameworks, and tools based on practical experience and project contributions.",
+  "last_updated": "2025-07-21",
+  "categories": {
+    "web_frontend": {
+      "HTML": 95,
+      "CSS": 88,
+      "JavaScript": 82
+    },
+    "systems_programming": {
+      "C++": 92,
+      "C": 60,
+      "Shell": 55
+    },
+    "high_level_languages": {
+      "Python": 70,
+      "PHP": 65
+    },
+    "build_tools": {
+      "CMake": 45
+    },
+    "design_tools": {
+      "Photoshop": 55
+    }
+  }
+}

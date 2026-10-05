@@ -1,0 +1,35 @@
+{
+  "languages": [
+    {
+      "category": "Security Tools",
+      "skills": [
+        { "name": "Nmap", "level": 95, "years": 4 },
+        { "name": "Metasploit", "level": 90, "years": 3 },
+        { "name": "Burp Suite", "level": 85, "years": 3 },
+        { "name": "Wireshark", "level": 90, "years": 4 },
+        { "name": "OWASP ZAP", "level": 80, "years": 2 },
+        { "name": "Nessus", "level": 85, "years": 3 }
+      ]
+    },
+    {
+      "category": "Security Frameworks",
+      "skills": [
+        { "name": "NIST Cybersecurity Framework", "level": 90, "years": 3 },
+        { "name": "ISO 27001", "level": 85, "years": 2 },
+        { "name": "OWASP Top 10", "level": 95, "years": 4 },
+        { "name": "MITRE ATT&CK", "level": 80, "years": 2 },
+        { "name": "SOC 2", "level": 75, "years": 2 }
+      ]
+    },
+    {
+      "category": "Programming & Scripting",
+      "skills": [
+        { "name": "Python", "level": 90, "years": 4 },
+        { "name": "Bash/Shell", "level": 85, "years": 4 },
+        { "name": "PowerShell", "level": 80, "years": 3 },
+        { "name": "SQL", "level": 85, "years": 3 },
+        { "name": "JavaScript", "level": 75, "years": 2 }
+      ]
+    }
+  ]
+}

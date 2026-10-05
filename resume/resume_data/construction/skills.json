@@ -1,0 +1,35 @@
+{
+  "languages": [
+    {
+      "category": "Construction Skills",
+      "skills": [
+        { "name": "Project Management", "level": 95, "years": 8 },
+        { "name": "Blueprint Reading", "level": 90, "years": 10 },
+        { "name": "Quality Control", "level": 90, "years": 8 },
+        { "name": "Safety Management", "level": 95, "years": 10 },
+        { "name": "Cost Estimation", "level": 85, "years": 6 },
+        { "name": "Site Supervision", "level": 90, "years": 8 }
+      ]
+    },
+    {
+      "category": "Tools & Equipment",
+      "skills": [
+        { "name": "Heavy Machinery Operation", "level": 85, "years": 7 },
+        { "name": "Power Tools", "level": 95, "years": 10 },
+        { "name": "CAD Software", "level": 80, "years": 5 },
+        { "name": "Surveying Equipment", "level": 85, "years": 6 },
+        { "name": "Testing Equipment", "level": 80, "years": 5 }
+      ]
+    },
+    {
+      "category": "Trade Specializations",
+      "skills": [
+        { "name": "Concrete Work", "level": 90, "years": 8 },
+        { "name": "Structural Steel", "level": 85, "years": 6 },
+        { "name": "Electrical Systems", "level": 75, "years": 4 },
+        { "name": "Plumbing Systems", "level": 70, "years": 3 },
+        { "name": "HVAC Systems", "level": 75, "years": 4 }
+      ]
+    }
+  ]
+}

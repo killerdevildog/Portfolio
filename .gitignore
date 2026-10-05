@@ -1,0 +1,19 @@
+# Local GitHub research cache (scripts/research_portfolio.py)
+.portfolio-research/
+
+# Dependencies and build caches
+node_modules/
+__pycache__/
+*.tmp
+
+# OS junk
+.DS_Store
+
+# Secrets: never commit these
+.env
+.env.*
+*.pem
+*.key
+*.p12
+id_rsa*
+id_ed25519*

@@ -1,0 +1,24 @@
+[
+  {
+    "id": "portfolio-website",
+    "name": "Portfolio Website",
+    "title": "Personal Portfolio & Developer Showcase",
+    "description": "A fully responsive portfolio website built with modern web technologies, featuring dynamic content loading, interactive elements, and a professional design.",
+    "technologies": ["HTML5", "CSS3", "JavaScript", "Bootstrap", "Swiper.js", "AOS Animation"],
+    "status": "completed",
+    "featured": true,
+    "githubUrl": "https://github.com/killerdevildog/Portfolio",
+    "liveUrl": "https://killerdevildog.github.io/Portfolio"
+  },
+  {
+    "id": "task-manager",
+    "name": "Task Manager Pro",
+    "title": "Advanced Task Management System",
+    "description": "A full-stack task management application with real-time updates, team collaboration features, and advanced project tracking capabilities.",
+    "technologies": ["React", "Node.js", "Express.js", "MongoDB", "Socket.io", "JWT", "Material-UI"],
+    "status": "completed",
+    "featured": true,
+    "githubUrl": "https://github.com/killerdevildog/task-manager-pro",
+    "liveUrl": "https://taskmanager-pro-demo.vercel.app"
+  }
+]

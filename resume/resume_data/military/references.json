@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Colonel Sarah Mitchell",
+    "title": "Brigade Commander",
+    "company": "U.S. Army 82nd Airborne Division",
+    "email": "sarah.mitchell@army.mil",
+    "phone": "(555) 123-ARMY",
+    "relationship": "Former Commanding Officer"
+  },
+  {
+    "name": "Command Sergeant Major Robert Johnson",
+    "title": "Senior Enlisted Advisor",
+    "company": "U.S. Army Infantry School",
+    "email": "robert.johnson@army.mil",
+    "phone": "(555) 234-ARMY",
+    "relationship": "Senior NCO Partner"
+  },
+  {
+    "name": "Lieutenant Colonel Mark Davis",
+    "title": "Operations Officer",
+    "company": "Joint Special Operations Command",
+    "email": "mark.davis@socom.mil",
+    "phone": "(555) 345-ARMY",
+    "relationship": "Peer Officer & Colleague"
+  }
+]

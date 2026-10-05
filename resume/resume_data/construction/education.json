@@ -1,0 +1,44 @@
+[
+  {
+    "institution": "Construction Management Institute",
+    "degree": "Bachelor of Science in Construction Management",
+    "field": "Construction Management",
+    "graduationDate": "2020",
+    "gpa": "3.6/4.0",
+    "honors": ["Cum Laude", "Dean's List"],
+    "relevantCoursework": [
+      "Project Management",
+      "Construction Law",
+      "Cost Estimation",
+      "Building Codes",
+      "Safety Management",
+      "Construction Materials"
+    ],
+    "projects": [
+      {
+        "name": "Senior Capstone Project",
+        "description": "Managed construction of student housing complex from planning to completion"
+      }
+    ],
+    "certifications": [
+      "OSHA 30-Hour Construction",
+      "PMP Certification",
+      "LEED Green Associate"
+    ]
+  },
+  {
+    "institution": "Trade Technical College",
+    "degree": "Associate of Applied Science",
+    "field": "Building Construction Technology",
+    "graduationDate": "2018",
+    "gpa": "3.8/4.0",
+    "honors": ["Outstanding Student Award"],
+    "relevantCoursework": [
+      "Blueprint Reading",
+      "Construction Methods",
+      "Materials Testing",
+      "Hand and Power Tools",
+      "Construction Safety"
+    ]
+  }
+]

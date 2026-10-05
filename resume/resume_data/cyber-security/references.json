@@ -1,0 +1,26 @@
+[
+  {
+    "name": "James Mitchell",
+    "title": "Chief Information Security Officer",
+    "company": "SecureCore Industries",
+    "email": "j.mitchell@securecore.com",
+    "phone": "(555) 987-6543",
+    "relationship": "Former Manager"
+  },
+  {
+    "name": "Dr. Lisa Thompson",
+    "title": "Cybersecurity Professor",
+    "company": "CyberSec Institute",
+    "email": "l.thompson@cybersec.edu",
+    "phone": "(555) 876-5432",
+    "relationship": "Academic Mentor"
+  },
+  {
+    "name": "Robert Chen",
+    "title": "Senior Penetration Tester",
+    "company": "RedTeam Security",
+    "email": "r.chen@redteam.com",
+    "phone": "(555) 765-4321",
+    "relationship": "Technical Mentor"
+  }
+]

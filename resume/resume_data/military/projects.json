@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Operation Enduring Freedom Deployment",
+    "description": "Led 120-person unit through 12-month combat deployment in Afghanistan. Managed logistics, personnel, and mission execution in high-stress environment.",
+    "technologies": ["Leadership", "Mission Planning", "Personnel Management", "Logistics"],
+    "status": "completed",
+    "highlights": [
+      "Zero casualties under command during deployment",
+      "Awarded Bronze Star Medal for exceptional leadership",
+      "Successfully completed 150+ combat missions",
+      "Managed $2M in equipment and resources"
+    ]
+  },
+  {
+    "name": "Multi-National Training Exercise",
+    "description": "Planned and executed large-scale training exercise involving 2,000+ personnel from 5 allied nations.",
+    "technologies": ["International Coordination", "Training Development", "Cross-Cultural Communication", "Event Management"],
+    "status": "completed",
+    "highlights": [
+      "Coordinated with military leaders from 5 countries",
+      "Exercise completed ahead of schedule",
+      "Improved inter-operability between allied forces",
+      "Featured in Joint Chiefs training documentation"
+    ]
+  },
+  {
+    "name": "Base Security Enhancement Initiative",
+    "description": "Led comprehensive security assessment and improvement project for forward operating base serving 3,000+ personnel.",
+    "technologies": ["Security Analysis", "Risk Assessment", "Project Management", "Team Coordination"],
+    "status": "completed",
+    "highlights": [
+      "Reduced security incidents by 75%",
+      "Implemented new protocols adopted base-wide",
+      "Coordinated with military police and intelligence units",
+      "Project completed $50K under budget"
+    ]
+  },
+  {
+    "name": "Veteran Transition Program",
+    "description": "Developed and implemented transition assistance program helping veterans adapt military skills to civilian careers.",
+    "technologies": ["Program Development", "Career Counseling", "Skills Translation", "Community Relations"],
+    "status": "in-progress",
+    "highlights": [
+      "Helped 200+ veterans transition to civilian careers",
+      "85% job placement rate within 6 months",
+      "Program adopted by 3 other military installations",
+      "Featured in Military Times magazine"
+    ]
+  }
+]

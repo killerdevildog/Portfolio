@@ -1,0 +1,794 @@
+{
+  "metadata": {
+    "username": "killerdevildog",
+    "generated_at": "2026-10-04T19:31:13.854132+00:00",
+    "source": "GitHub API via gh; verified pull request merge status",
+    "scope": "Public merged code/build/test pull requests into other owners' non-fork repositories; documentation-only changes excluded",
+    "total_pull_requests": 34,
+    "repositories": 31
+  },
+  "pull_requests": [
+    {
+      "title": "fix(usvg): inherit `gradientTransform` and `patternTransform` via `href`",
+      "number": 1135,
+      "state": "merged",
+      "url": "https://github.com/linebender/resvg/pull/1135",
+      "description": "Fixes #1134.\n\nA gradient or pattern that references another one through `href` did not inherit its `gradientTransform` or `patternTransform`. For example, `<linearGradient id=\"lg2\" xlink:href=\"#lg1\"/>`, where `lg1` has `gradientTransform=\"rotate(90 0.5 0.5)\"`, rendered left to right instead of top to bottom.\n\nThis regressed in 9101f30a (first released in v0.37.0), which replaced `resolve_attr(node, AId::GradientTransform).attribute(..)` with `node.resolve_transform(..)` to support `transform-origin`. `resolve_transform` only reads the element itself, so the `href` lookup was lost and the `GradientTransform` entries in `resolve_lg_attr` and `resolve_rg_attr` became unused. Resolving the defining element with `resolve_attr` first restores inheritance and keeps `transform-origin` support. A transform set on the element itself still takes precedence. When the transform is inherited, `transform-origin` is read from the same element that defines the transform.\n\n| Before | After |\n|---|---|\n| <img width=\"400\" height=\"400\" alt=\"Before: resvg main renders the gradient left to right\" src=\"https://github.com/user-attachments/assets/7388db34-be21-40fd-8b93-b184f0648906\" /> | <img width=\"400\" height=\"400\" alt=\"After: resvg with the fix renders the gradient top to bottom\" src=\"https://github.com/user-attachments/assets/ac46dead-3910-4e6e-bbd7-160928f58591\" /> |\n\nThis PR changes only `crates/usvg/src/parser/paint_server.rs`.\n\nValidation: the reproducer from #1134 fails before the change and passes afterward; resvg's output now matches rsvg-convert 2.58 to within 1/255 per color channel (before the change it differed by up to 255). Local paired cases covering linear, radial and pattern templates, a radial gradient using a linear template, a two-level `href` chain, and an element that overrides the inherited transform each render pixel-identically to the same transform set directly on the element. `cargo test --release -p resvg -p usvg` passes (1731 integration tests, no reference image changes) and `cargo fmt --check` is clean. The local regression tests are not included in this PR. Tested on Linux only.\n",
+      "repository": {
+        "name": "resvg",
+        "owner": "linebender",
+        "full_name": "linebender/resvg",
+        "url": "https://github.com/linebender/resvg",
+        "logo": {
+          "owner_avatar": "https://avatars.githubusercontent.com/u/46134943?v=4"
+        }
+      },
+      "author": "killerdevildog",
+      "created_at": "2026-09-13T16:17:19Z",
+      "merged_at": "2026-10-03T06:56:49Z",
+      "commits_count": 2,
+      "changed_files": 8,
+      "additions": 100,
+      "deletions": 3
+    },
+    {
+      "title": "Fix cylinder point containment",
+      "number": 28,
+      "state": "merged",
+      "url": "https://github.com/ThePhysicsGuys/Physics3D/pull/28",
+      "description": "Fixes #29\n\n`cylinderShape(1, 2).containsPoint(...)` rejects `(0, 0.75, 0)`, which is inside the cylinder, and accepts `(0, -2, 0)`, which is outside. The radial check uses `x*x + y + y`, breaking the cylinder's symmetry.\n\nReplace `y + y` with `y * y` so the check evaluates `x*x + y*y`. The two queries now return `true` and `false`, respectively.\n\nValidation: built the standalone physics library in Debug mode with GCC 16.0.1 and ran all 13 geometry tests successfully. A local regression test failed before the fix and passed afterward with 30 assertions covering both signs of X/Y, two radii, and radial and cap boundaries. That test and the standalone reproducer are not included in this PR; this PR contains only the one-line implementation fix. The full project test suite was not run.\n\n### Local regression test\n\nThis is the test run from `tests/geometryTests.cpp` **before applying the fix**. It failed on the original implementation because `containsPoint(Vec3(0.0, -2.0, 0.0))` returned `true` for a radius-1 cylinder, although the point is outside. After the fix, the same test passed all 30 assertions, and all 13 geometry tests passed. The failure demonstrated the existing bug; it was not a failure introduced by this PR.\n\nThe test is reproduced below for reference. It remains local and is not included in the committed changes.\n\n```cpp\nTEST_CASE(testCylinderContainsPoint) {\n\tfor(double radius : {1.0, 2.5}) {\n\t\tShape cylinder = cylinderShape(radius, 4.0);\n\t\tASSERT_TRUE(cylinder.containsPoint(Vec3(0.0, 0.0, 0.0)));\n\t\tfor(double sign : {-1.0, 1.0}) {\n\t\t\tASSERT_TRUE(cylinder.containsPoint(Vec3(sign * 0.75 * radius, 0.0, 0.0)));\n\t\t\tASSERT_TRUE(cylinder.containsPoint(Vec3(0.0, sign * 0.75 * radius, 0.0)));\n\t\t\tASSERT_FALSE(cylinder.containsPoint(Vec3(sign * 2.0 * radius, 0.0, 0.0)));\n\t\t\tASSERT_FALSE(cylinder.containsPoint(Vec3(0.0, sign * 2.0 * radius, 0.0)));\n\t\t\tASSERT_TRUE(cylinder.containsPoint(Vec3(0.0, sign * radius, 0.0)));\n\t\t\tASSERT_TRUE(cylinder.containsPoint(Vec3(0.0, 0.0, sign * 2.0)));\n\t\t\tASSERT_FALSE(cylinder.containsPoint(Vec3(0.0, 0.0, sign * 2.5)));\n\t\t}\n\t}\n}\n```\n",
+      "repository": {
+        "name": "Physics3D",
+        "owner": "ThePhysicsGuys",
+        "full_name": "ThePhysicsGuys/Physics3D",
+        "url": "https://github.com/ThePhysicsGuys/Physics3D",
+        "logo": {
+          "owner_avatar": "https://avatars.githubusercontent.com/u/45299690?v=4"
+        }
+      },
+      "author": "killerdevildog",
+      "created_at": "2026-09-06T23:45:24Z",
+      "merged_at": "2026-09-21T17:43:22Z",
+      "commits_count": 1,
+      "changed_files": 1,
+      "additions": 1,
+      "deletions": 1
+    },
+    {
+      "title": "Fix MainObject::setXOffset() overwriting the Y offset",
+      "number": 10,
+      "state": "merged",
+      "url": "https://github.com/Is-Daouda/is-Engine/pull/10",
+      "description": "Fixes #9\n\n### Problem\n\n`MainObject::setXOffset()` passes `m_xOffset` where `setXYOffset()` expects its `y` argument:\n\n```cpp\nvoid MainObject::setXOffset(float val)\n{\n    setXYOffset(val, m_xOffset);   // m_xOffset used as the y argument\n}\n\nvoid MainObject::setYOffset(float val)\n{\n    setXYOffset(m_xOffset, val);   // correct\n}\n```\n\n`setXYOffset(x, y)` assigns **both** members and then calls `updateSDMsprite()`, so setting the X offset also replaces `m_yOffset` with the *previous* X offset and repositions the sprite on the Y axis. The header documents the two setters as independent (`/// Set the x offset` / `/// Set the y offset`), and `setYOffset()` already behaves that way.\n\n### Change\n\nOne line, `m_xOffset` -> `m_yOffset`.\n\n### Verification\n\nBuilt against the SFML backend (Linux, GCC, `-std=c++17`); the translation unit compiles clean.\n\nBehaviour before and after, using a local harness against the real class:\n\n```cpp\nis::MainObject obj;\nobj.setXYOffset(10.f, 20.f);\nobj.setXOffset(5.f);\n```\n\n| | `getXOffset()` | `getYOffset()` |\n|---|---|---|\n| `4.0.x` (before) | 5 | **10** \u2014 expected 20 |\n| this PR | 5 | 20 |\n\nThe mirrored case (`setYOffset(7)` preserving `m_xOffset == 10`) passes both before and after, confirming only the X setter was affected.\n\nNo test file is included: the repository vendors `catch.hpp` but has no test suite or build target wired up, so adding one would take this well past a single-concern change. Happy to add tests if you would like the harness upstreamed.\n",
+      "repository": {
+        "name": "is-Engine",
+        "owner": "Is-Daouda",
+        "full_name": "Is-Daouda/is-Engine",
+        "url": "https://github.com/Is-Daouda/is-Engine",
+        "logo": {
+          "owner_avatar": "https://avatars.githubusercontent.com/u/45235532?v=4"
+        }
+      },
+      "author": "killerdevildog",
+      "created_at": "2026-09-12T02:59:58Z",
+      "merged_at": "2026-09-14T16:48:45Z",
+      "commits_count": 1,
+      "changed_files": 1,
+      "additions": 1,
+      "deletions": 1
+    },
+    {
+      "title": "Fix ParseFloat rejecting a '+' sign in the exponent",
+      "number": 4262,
+      "state": "merged",
+      "url": "https://github.com/FlaxEngine/FlaxEngine/pull/4262",
+      "description": "Fixes #4261.\n\n`ParseFloat()` consumed a `-` in the exponent but not a `+`, so `1e+10`, `6.02e+23` and `2.0E+8` failed to parse \u2014 the function returned its failure code *and* left `*ret` unwritten, which most callers silently ignore.\n\n## The change\n\n```diff\n         str++;\n-        T powerer = *str == '-' ? str++, (T)0.1 : (T)10;\n+        T powerer = (T)10;\n+        if (*str == '-')\n+        {\n+            powerer = (T)0.1;\n+            str++;\n+        }\n+        else if (*str == '+')\n+        {\n+            str++;\n+        }\n         T power = 0;\n```\n\nThe `+` branch only advances `str`, leaving `powerer` at `10` \u2014 so a signed-positive exponent now behaves exactly like an unsigned one.\n\n## Verification\n\nThe harness below `#include`s the function body extracted straight from git on both sides \u2014 `upstream/master` and this branch \u2014 so it exercises the real code rather than a transcription. Only `Math::Pow` is stubbed; `strtod` is the reference.\n\n```bash\ngit show master:Source/Engine/Platform/Base/StringUtilsBase.cpp | sed -n '434,475p' \\\n  | sed 's/\\bParseFloat\\b/ParseFloat_before/' > before.inc\ngit show HEAD:Source/Engine/Platform/Base/StringUtilsBase.cpp   | sed -n '434,484p' \\\n  | sed 's/\\bParseFloat\\b/ParseFloat_after/'  > after.inc\ng++ -std=c++17 -Wall -o verify verify.cpp && ./verify\n```\n\n```cpp\n// verify.cpp\n#include <cstdio>\n#include <cstdlib>\n#include <cstring>\n#include <cmath>\n#include <cstdint>\n\nnamespace Math { template<typename T> T Pow(T a, T b) { return (T)std::pow((double)a, (double)b); } }\ntypedef char16_t Char;   // FlaxEngine's Char\n\n#include \"before.inc\"   // ParseFloat_before  (master)\n#include \"after.inc\"    // ParseFloat_after   (this branch)\n\nstatic bool bitEqual(float a, float b)\n{\n    uint32_t x, y; std::memcpy(&x, &a, 4); std::memcpy(&y, &b, 4); return x == y;\n}\nstatic bool closeTo(float a, float b)\n{\n    if (a == b) return true;\n    const float d = std::fabs(a - b), m = std::fmax(std::fabs(a), std::fabs(b));\n    return d <= m * 1e-5f;\n}\nstatic void widen(const char* s, Char* out) { while (*s) *out++ = (Char)*s++; *out = 0; }\n\nint main()\n{\n    int fixedCount = 0, stillBroken = 0, regressions = 0, wideBad = 0;\n\n    // Part 1 - the inputs reported in #4261\n    const char* bug[] = { \"1e+10\", \"1E+5\", \"6.02e+23\", \"-2.5e+3\", \"3.4e+38\", \"2.0E+8\", \"1e+0\", \"0.5e+2\" };\n    printf(\"%-10s | %-12s | %-22s | %s\\n\", \"input\", \"strtod\", \"before (master)\", \"after (this PR)\");\n    for (const char* in : bug)\n    {\n        const float ref = (float)strtod(in, nullptr);\n        float vb = -12345.0f; const bool fb = ParseFloat_before<char, float>(in, &vb);\n        float va = -12345.0f; const bool fa = ParseFloat_after<char, float>(in, &va);\n        char bb[48], ba[48];\n        if (fb) snprintf(bb, sizeof bb, \"FAILED (ret untouched)\"); else snprintf(bb, sizeof bb, \"%g\", vb);\n        if (fa) snprintf(ba, sizeof ba, \"FAILED\"); else snprintf(ba, sizeof ba, \"%g\", va);\n        const bool okAfter = !fa && closeTo(va, ref);\n        okAfter ? fixedCount++ : stillBroken++;\n        printf(\"%-10s | %-12g | %-22s | %s %s\\n\", in, ref, bb, ba, okAfter ? \"OK\" : \"<-- STILL WRONG\");\n    }\n\n    // Part 2 - no-regression sweep: every input without a '+' must be BIT-IDENTICAL before/after\n    const char* mantissas[] = { \"0\", \"1\", \"-1\", \"3.14\", \"-3.14\", \"0.5\", \"100\", \"123456\",\n                                \"0.000125\", \"9.99\", \"-0.001\", \"2.5\", \"7\", \"-42.75\" };\n    const char* exps[] = { \"\", \"e0\", \"e1\", \"e10\", \"e-1\", \"e-10\", \"E5\", \"E-5\", \"e38\", \"e-38\",\n                           \"e\", \"e-\", \"x\", \".\", \"abc\" };   // malformed forms included on purpose\n    char buf[64]; int checked = 0;\n    for (const char* m : mantissas)\n        for (const char* e : exps)\n        {\n            snprintf(buf, sizeof buf, \"%s%s\", m, e);\n            float vb = -12345.0f; const bool fb = ParseFloat_before<char, float>(buf, &vb);\n            float va = -12345.0f; const bool fa = ParseFloat_after<char, float>(buf, &va);\n            checked++;\n            if (fb != fa || !bitEqual(vb, va)) { printf(\"REGRESSION \\\"%s\\\"\\n\", buf); regressions++; }\n        }\n    printf(\"no-regression sweep: %d inputs, %d changed (must be 0)\\n\", checked, regressions);\n\n    // Part 3 - the wide Char instantiation used by StringUtils::Parse(const Char*, float*)\n    const char* wide[] = { \"1e+10\", \"6.02e+23\", \"-2.5e+3\", \"1e-10\", \"1e10\", \"3.14\" };\n    for (const char* in : wide)\n    {\n        Char w[64]; widen(in, w);\n        float v = -12345.0f;\n        if (ParseFloat_after<Char, float>(w, &v) || !closeTo(v, (float)strtod(in, nullptr))) wideBad++;\n    }\n    printf(\"wide Char: %d failures (must be 0)\\n\", wideBad);\n\n    const bool pass = (stillBroken == 0 && regressions == 0 && wideBad == 0);\n    printf(\"RESULT: %s\\n\", pass ? \"PASS\" : \"FAIL\");\n    return pass ? 0 : 1;\n}\n```\n\nOutput:\n\n```\nPart 1 - inputs reported in #4261\ninput      | strtod       | before (upstream)      | after (this PR)\n-----------|--------------|------------------------|------------------\n1e+10      | 1e+10        | FAILED (ret untouched) | 1e+10 OK\n1E+5       | 100000       | FAILED (ret untouched) | 100000 OK\n6.02e+23   | 6.02e+23     | FAILED (ret untouched) | 6.02e+23 OK\n-2.5e+3    | -2500        | FAILED (ret untouched) | -2500 OK\n3.4e+38    | 3.4e+38      | FAILED (ret untouched) | 3.4e+38 OK\n2.0E+8     | 2e+08        | FAILED (ret untouched) | 2e+08 OK\n1e+0       | 1            | FAILED (ret untouched) | 1 OK\n0.5e+2     | 50           | FAILED (ret untouched) | 50 OK\n  fixed: 8/8   still broken: 0\n\nPart 2 - no-regression sweep over 210 inputs containing no '+'\n  behaviour changed on: 0  (must be 0)\n\nPart 3 - wide Char instantiation: 0 failures over 6 inputs (must be 0)\n\nRESULT: PASS\n```\n\nSo: every reported input now matches `strtod`, and all 210 inputs without a `+` \u2014 valid and malformed alike \u2014 are bit-for-bit unchanged, so nothing that parsed before can parse differently now. Both template instantiations (`char` and `Char`) are covered.\n",
+      "repository": {
+        "name": "FlaxEngine",
+        "owner": "FlaxEngine",
+        "full_name": "FlaxEngine/FlaxEngine",
+        "url": "https://github.com/FlaxEngine/FlaxEngine",
+        "logo": {
+          "owner_avatar": "https://avatars.githubusercontent.com/u/26741064?v=4"
+        }
+      },
+      "author": "killerdevildog",
+      "created_at": "2026-09-13T20:07:27Z",
+      "merged_at": "2026-09-14T05:08:04Z",
+      "commits_count": 1,
+      "changed_files": 1,
+      "additions": 10,
+      "deletions": 1
+    },
+    {
+      "title": "Fix VECTOR3D::GetAngle() returning the supplement for obtuse angles",
+      "number": 399,
+      "state": "merged",
+      "url": "https://github.com/x-ege/xege/pull/399",
+      "description": "Fixes #398.\n\n`VECTOR3D::GetAngle()` returns `asin(|s x e|)`, whose range is `[0, pi/2]`. The\ncross-product magnitude is `sin(theta)`, which cannot distinguish `theta` from\n`pi - theta`, and the sign that `s . e` carries is discarded. Every obtuse angle\nis reflected to its supplement, and antiparallel vectors report `0`.\n\nReturn `atan2(|s x e|, s . e)` instead. Both quantities are already available in\nthe function, and the sibling `VECTOR3D::Rotate(const VECTOR3D&, const VECTOR3D&)`\ndirectly above already keeps `cr = s * e` alongside `sr = a.GetModule()` for the\nsame reason, so this brings the two into agreement.\n\nMeasured before and after (degrees):\n\n| vectors | expected | before | after |\n| --- | --- | --- | --- |\n| `+x` vs `+x` | 0 | 0 | 0 |\n| `+x` vs `(1,1,0)` | 45 | 45 | 45 |\n| `+x` vs `+y` | 90 | 90 | 90 |\n| `+x` vs `(-1,sqrt3,0)` | 120 | 60 | 120 |\n| `+x` vs `(-1,1,0)` | 135 | 45 | 135 |\n| `+x` vs `-x` | 180 | 0 | 180 |\n| default `s=+z`, `e=-z` | 180 | 0 | 180 |\n\nThis PR changes only two lines in `src/math.cpp` and adds no include; `atan2`\ncomes from the `<math.h>` already at the top of the file.\n\nValidation: a local harness linked against the built library checks eight\nhand-computed cases, the documented default second argument, a sweep of every\ndegree from 0 to 180 in two orthogonal planes against `acos` of the normalised\ndot product, and symmetry plus scale invariance on non-unit-length inputs. It\nreports 275 failures against the unmodified baseline and 0 after the change. The\nexisting suite passes 14/14 (`ctest`, Linux, GCC 16.0.1, Cairo backend, Release).\nA separate Debug build under AddressSanitizer and UndefinedBehaviorSanitizer runs\nthe same harness clean. The harness is local and is not included in this PR.\nFormatting checked with clang-format 18; the changed lines produce no diff.\n\n\n<!-- This is an auto-generated comment: release notes by coderabbit.ai -->\n\n## Summary by CodeRabbit\n\n* **\u9519\u8bef\u4fee\u590d**\n  * \u4fee\u6b63\u4e09\u7ef4\u5411\u91cf\u5939\u89d2\u8ba1\u7b97\uff0c\u73b0\u53ef\u6b63\u786e\u8986\u76d6 0 \u5230 \u03c0 \u7684\u5b8c\u6574\u89d2\u5ea6\u8303\u56f4\u3002\n  * \u63d0\u9ad8\u63a5\u8fd1 0\u00b0 \u548c 180\u00b0 \u65f6\u7684\u8ba1\u7b97\u7a33\u5b9a\u6027\u3002\n\n<!-- end of auto-generated comment: release notes by coderabbit.ai -->",
+      "repository": {
+        "name": "xege",
+        "owner": "x-ege",
+        "full_name": "x-ege/xege",
+        "url": "https://github.com/x-ege/xege",
+        "logo": {
+          "owner_avatar": "https://avatars.githubusercontent.com/u/148707739?v=4"
+        }
+      },
+      "author": "killerdevildog",
+      "created_at": "2026-09-12T18:40:53Z",
+      "merged_at": "2026-09-13T10:16:34Z",
+      "commits_count": 1,
+      "changed_files": 1,
+      "additions": 2,
+      "deletions": 2
+    },
+    {
+      "title": "Fix sprite height reported by crash recovery",
+      "number": 649,
+      "state": "merged",
+      "url": "https://github.com/LibreSprite/LibreSprite/pull/649",
+      "description": "Fixes #648.\n\n`Reader::readSprite()` reads the backed-up sprite's `w` and `h` and range-checks both,\nbut on the `DocumentInfo`-only path it stored the **width** into `DocumentInfo::height`,\ndiscarding the height it had just validated:\n\n```cpp\n      m_loadInfo->width = w;\n-     m_loadInfo->height = w;\n+     m_loadInfo->height = h;\n```\n\nBoth consumers of those fields were affected for any non-square sprite:\n\n* `Session::Backup::Backup()` (`src/app/crash/session.cpp:41`) builds the label shown in\n  **Recover Files**, so a 320x200 sprite was listed as `RGB Sprite 320x320`.\n* `read_document_with_raw_images()` (`src/app/crash/read_document.cpp:395`) builds the\n  recovered canvas with `new Sprite(info.format, info.width, info.height, 256)`, so the\n  **Raw Frames** / **Raw Layers** recovery buttons restored the sprite onto a square\n  W x W canvas instead of W x H.\n\nThe normal (non-`m_loadInfo`) path a few lines below already does\n`new Sprite(format, w, h, 256)` correctly, which is what makes `h` the only value that\nbelongs on the changed line.\n\n### Testing\n\nI couldn't do a full CMake build in my environment (the tree needs CMake 4.1, I had\n3.28), so I verified this by compiling `src/app/crash/read_document.cpp` **unmodified**\nand linking it against `base`/`gfx`/`doc`/`undo` built from the same tree, writing a\nbackup session for a 320x200 sprite in the exact on-disk format `write_document()`\nproduces, and calling the real `read_document_info()`.\n\nBefore:\n\n```text\nbackup on disk : 320x200\nDocumentInfo   : 320x320  (frames=1, file=mysprite.ase)\nrecovery label : \"RGB Sprite 320x320, 1 frame: mysprite.ase\"\nraw recovery   : canvas 320x320\n```\n\nAfter, with only this change applied:\n\n```text\nbackup on disk : 320x200\nDocumentInfo   : 320x200  (frames=1, file=mysprite.ase)\nrecovery label : \"RGB Sprite 320x200, 1 frame: mysprite.ase\"\nraw recovery   : canvas 320x200\n```\n\nThe harness is attached to #648 if a maintainer wants to re-run it. I did not run the\nproject's own test suite.\n\n### Provenance\n\nWritten against the local code; not cherry-picked. Aseprite fixed the same line in\n`1b57bb8ac395` (2017-05-10), which post-dates the August 2016 relicense and so is not\nGPL-compatible with this project. It's cited in #648 as evidence that the original author\nconsidered it a bug, but the change here follows from LibreSprite's own surrounding code.\n",
+      "repository": {
+        "name": "LibreSprite",
+        "owner": "LibreSprite",
+        "full_name": "LibreSprite/LibreSprite",
+        "url": "https://github.com/LibreSprite/LibreSprite",
+        "logo": {
+          "owner_avatar": "https://avatars.githubusercontent.com/u/21368660?v=4"
+        }
+      },
+      "author": "killerdevildog",
+      "created_at": "2026-09-07T01:10:54Z",
+      "merged_at": "2026-09-13T08:17:15Z",
+      "commits_count": 1,
+      "changed_files": 1,
+      "additions": 1,
+      "deletions": 1
+    },
+    {
+      "title": "[rcore] Fix ComputeSHA256() wrong hash when message length mod 64 is 56..59",
+      "number": 6144,
+      "state": "merged",
+      "url": "https://github.com/raysan5/raylib/pull/6144",
+      "description": "Fixes #6143.\n\n`ComputeSHA256()` reserves the padding tail with `sizeof(dataSize)`. `dataSize` is `int`, so that reserves 4 bytes, but SHA-256 needs 9: the `0x80` marker plus a 64-bit big-endian message length. The write a few lines below already uses `sizeof(bitLen)` (8 bytes), so the reserve and the write disagreed.\n\nWhen only 5 to 8 bytes of room remained, the length field was written over the `0x80` marker and the tail of the message, and the padded size was one block short of the canonical size. Every write stayed inside the allocation, so the digest was silently wrong rather than crashing. This affected `dataSize % 64 \u2208 {56, 57, 58, 59}`, which is 4/64 = 6.25% of input lengths, including the FIPS 180-4 two-block test vector.\n\nReserving `sizeof(bitLen)` fixes it. With an 8 byte reserve the existing round-up line produces exactly the canonical padded size for every length: writing `r = (dataSize + 8) mod 64`, when `r != 0` the result is the smallest multiple of 64 at or above `dataSize + 9`, and when `r == 0` (`dataSize \u2261 56 mod 64`) it adds the extra block the standard requires. Room after the message is `8 + (64 - r) >= 9` in all cases.\n\nThis PR changes only one line in `src/rcore.c`.\n\nValidation: the 56 byte FIPS 180-4 vector fails before the change and passes afterward. All 5 NIST vectors pass (lengths 0, 3, 56, 112 and 1000000). Every length from 0 to 4096 matches a reference SHA-256, covering all 64 residue classes mod 64 sixty-four times each, as do 3000 pseudo-random messages at pseudo-random lengths up to 70000 bytes; before the change those same runs produced 256 and 210 wrong digests respectively. Comparing the padding arithmetic against the canonical padded size over lengths 0 to 10,000,000 gives 0 mismatches, and `paddedSize % 64 == 0` with room `>= dataSize + 9` holds throughout; the old expression gave 625,000 mismatches over that range. The full harness runs clean under AddressSanitizer and UndefinedBehaviorSanitizer. `ComputeSHA1()`, `ComputeMD5()`, `ComputeCRC32()`, `EncodeDataBase64()` and `DecodeDataBase64()` were re-checked against reference implementations and are unchanged and correct. `rcore.c` compiles with no warnings under `-Wall -Wextra`; the only warning in a full build is the pre-existing `'mi' may be used uninitialized` in bundled `external/m3d.h`, reached via `rmodels.c`.\n\nThe test harnesses are local and are not included in this PR. Built and tested on Linux with GCC (`PLATFORM_DESKTOP_GLFW`, `GRAPHICS_API_OPENGL_33`); not tested on Windows, macOS or Web, though the change is platform independent integer arithmetic. Note that digests returned for the affected lengths change with this fix, which is the intent: they now match the standard.\n",
+      "repository": {
+        "name": "raylib",
+        "owner": "raysan5",
+        "full_name": "raysan5/raylib",
+        "url": "https://github.com/raysan5/raylib",
+        "logo": {
+          "owner_avatar": "https://avatars.githubusercontent.com/u/5766837?v=4"
+        }
+      },
+      "author": "killerdevildog",
+      "created_at": "2026-09-12T05:16:44Z",
+      "merged_at": "2026-09-12T08:24:51Z",
+      "commits_count": 1,
+      "changed_files": 1,
+      "additions": 1,
+      "deletions": 1
+    },
+    {
+      "title": "Fix scientific notation in expression tokenizer",
+      "number": 7113,
+      "state": "merged",
+      "url": "https://github.com/opentoonz/opentoonz/pull/7113",
+      "description": "Fixes #7112.\n\nExpression literals such as `1.0e2` and `1e+2` were split into multiple tokens, while `1.0e+2` worked. Scan the exponent independently of the decimal point, allow an optional sign, and require a digit before consuming the exponent. A bare decimal point cannot serve as the mantissa.\n\nThis PR changes only `toonz/sources/common/expressions/ttokenizer.cpp`.\n\nValidation: the original 10-case reproduction now passes; a local 34-case regression harness covering numeric values, incomplete exponents, token positions, and surrounding expression tokens passes. The same harness detects failures against the original source. AddressSanitizer, UndefinedBehaviorSanitizer, and LeakSanitizer checks pass. Test harnesses remain local and are not included in this PR. Formatting checked with clang-format 18; CI uses clang-format 14. The full application and GUI were not tested.\n",
+      "repository": {
+        "name": "opentoonz",
+        "owner": "opentoonz",
+        "full_name": "opentoonz/opentoonz",
+        "url": "https://github.com/opentoonz/opentoonz",
+        "logo": {
+          "owner_avatar": "https://avatars.githubusercontent.com/u/15189838?v=4"
+        }
+      },
+      "author": "killerdevildog",
+      "created_at": "2026-09-06T22:28:43Z",
+      "merged_at": "2026-09-10T02:00:40Z",
+      "commits_count": 1,
+      "changed_files": 1,
+      "additions": 9,
+      "deletions": 7
+    },
+    {
+      "title": "Fix polyhedron raycasts parallel to faces",
+      "number": 156,
+      "state": "merged",
+      "url": "https://github.com/xissburg/edyn/pull/156",
+      "description": "Rays parallel to a convex polyhedron face can miss valid intersections. For a cube made with `make_box_mesh()`, a ray through its center returns no hit instead of the expected fraction `0.25`.\n\nReverse the parallel-plane rejection check from `dist > 0` to `dist < 0`. Since `dist = dot(vertex - p0, normal)` uses outward-facing normals, a negative value places the ray outside the face plane.\n\nFixes #155.\n\nValidation: the reproducer fails before the change and passes afterward. Local regression coverage passed for 30 rays covering both directions along all three axes, interior and boundary hits, outside misses, normals, and face indices. The full suite passed 66/71 tests in a sequential run; the five failures also reproduced on the unmodified baseline in the same environment (Linux, Clang 18.1.3, EnTT 3.15.0, Debug). This PR contains only the source correction; the local regression test is not included.\n",
+      "repository": {
+        "name": "edyn",
+        "owner": "xissburg",
+        "full_name": "xissburg/edyn",
+        "url": "https://github.com/xissburg/edyn",
+        "logo": {
+          "owner_avatar": "https://avatars.githubusercontent.com/u/762769?v=4"
+        }
+      },
+      "author": "killerdevildog",
+      "created_at": "2026-09-06T22:57:16Z",
+      "merged_at": "2026-09-08T17:21:56Z",
+      "commits_count": 1,
+      "changed_files": 1,
+      "additions": 1,
+      "deletions": 1
+    },
+    {
+      "title": "Add forEachLoaded<T> helper function for object iteration",
+      "number": 3614,
+      "state": "merged",
+      "url": "https://github.com/OpenLoco/OpenLoco/pull/3614",
+      "description": "Implements a templated helper function that simplifies the common pattern of iterating over all loaded objects of a specific type. This reduces boilerplate code and improves readability.\r\n\r\nThe helper supports multiple callback signatures:\r\n- void(const T&)              - object only (const)\r\n- void(T&)                    - object only (mutable)\r\n- void(LoadedObjectId, const T&) - index and object (const)\r\n- void(LoadedObjectId, T&)    - index and object (mutable)\r\n\r\nApplied the helper to MapWindow.cpp as an initial demonstration, replacing manual loops for LandObject and IndustryObject iteration.\r\n\r\nCloses #2948",
+      "repository": {
+        "name": "OpenLoco",
+        "owner": "OpenLoco",
+        "full_name": "OpenLoco/OpenLoco",
+        "url": "https://github.com/OpenLoco/OpenLoco",
+        "logo": {
+          "owner_avatar": "https://avatars.githubusercontent.com/u/47774002?v=4"
+        }
+      },
+      "author": "killerdevildog",
+      "created_at": "2026-01-13T19:24:59Z",
+      "merged_at": "2026-07-23T01:53:33Z",
+      "commits_count": 3,
+      "changed_files": 3,
+      "additions": 40,
+      "deletions": 42
+    },
+    {
+      "title": "fix: add missing break in RADIO_SX1280 switch case",
+      "number": 306,
+      "state": "merged",
+      "url": "https://github.com/tinygs/tinyGS/pull/306",
+      "description": "Found a missing `break` in the switch statement in `Radio::init()` that affects all SX1280 boards.\n\n## What's happening\n\nThe `RADIO_SX1280` case falls straight through into `default`, so the SX1280 RadioHal gets created and then immediately overwritten by an SX1268 one:\n\n```cpp\ncase RADIO_SX1280:\n    radioHal = new RadioHal<SX1280>(...);\n    moduleNameString=\"SX1280\";\n    // no break here!\ndefault:\n    radioHal = new RadioHal<SX1268>(...);\n    moduleNameString=\"default SX1268\";\n```\n\nSo any board set up for SX1280 (like the LilyGo T3S3 2.4GHz) ends up running the SX1268 driver instead, which either fails to init or just doesn't work right. The SX1280 object also leaks since nothing ever frees it.\n\n## The fix\n\nJust added the missing `break;` \u2014 same as every other case in the switch already has.\n\n```diff\n     case RADIO_SX1280:\n       radioHal = new RadioHal<SX1280>(...);\n       moduleNameString=\"SX1280\";\n+      break;\n     default:\n```\n\nProbably the root cause (or at least part of it) for #280.",
+      "repository": {
+        "name": "tinyGS",
+        "owner": "tinygs",
+        "full_name": "tinygs/tinyGS",
+        "url": "https://github.com/tinygs/tinyGS",
+        "logo": {
+          "owner_avatar": "https://avatars.githubusercontent.com/u/82781831?v=4"
+        }
+      },
+      "author": "killerdevildog",
+      "created_at": "2026-03-17T01:28:43Z",
+      "merged_at": "2026-03-17T22:15:03Z",
+      "commits_count": 1,
+      "changed_files": 1,
+      "additions": 1,
+      "deletions": 0
+    },
+    {
+      "title": "Fix const-correctness warning in linux.c",
+      "number": 4843,
+      "state": "merged",
+      "url": "https://github.com/libuv/libuv/pull/4843",
+      "description": "Addresses issue #4814 by adding explicit cast when assigning string literal \"unknown\" to mutable char* pointer. The cast is safe because the string is only read from, never modified.\r\n\r\nThis eliminates compiler warnings when building with strict const-correctness flags like -Wwrite-strings.",
+      "repository": {
+        "name": "libuv",
+        "owner": "libuv",
+        "full_name": "libuv/libuv",
+        "url": "https://github.com/libuv/libuv",
+        "logo": {
+          "owner_avatar": "https://avatars.githubusercontent.com/u/4030929?v=4"
+        }
+      },
+      "author": "killerdevildog",
+      "created_at": "2025-07-19T15:51:45Z",
+      "merged_at": "2026-02-21T01:20:15Z",
+      "commits_count": 1,
+      "changed_files": 1,
+      "additions": 1,
+      "deletions": 1
+    },
+    {
+      "title": "Optimize NonLocalAllocator: sorted vector + immediate coalescing",
+      "number": 3593,
+      "state": "merged",
+      "url": "https://github.com/bkaradzic/bgfx/pull/3593",
+      "description": "# Optimize NonLocalAllocator: sorted vector with immediate coalescing\r\n\r\n## Summary\r\n\r\nReplaces `NonLocalAllocator`'s `stl::list<Free>` (linked list) with a sorted `stl::vector<Free>`, adding immediate coalescing on free. This eliminates the O(n) `push_front` shifts on every `free()`/`add()` call and removes the need for deferred sorting/merging in `compact()`. The `alloc()` first-fit scan remains linear but benefits from fewer free-list entries (due to eager coalescing) and cache-friendly contiguous memory.\r\n\r\n## Problem\r\n\r\nThe existing implementation uses a linked list (`stl::list`) for the free list, which has several performance issues:\r\n\r\n- **`push_front` is O(n)** \u2014 `tinystl::list` is backed by a vector, so `push_front` shifts all elements.\r\n- **`alloc()` does a linear first-fit scan** \u2014 O(n) per allocation with no early-out benefit from ordering.\r\n- **`compact()` sorts the entire list then walks it** \u2014 deferred coalescing is O(n log n + n) and must be called periodically.\r\n- **Poor cache locality** \u2014 even though `tinystl::list` uses a vector internally, the lack of sorted order means no spatial locality benefit during searches.\r\n\r\n> Note: `stl::list` in bgfx maps to `tinystl::list` (not `std::list`), which is internally a vector with list-like API \u2014 making `push_front` an O(n) element shift.\r\n\r\nThis allocator backs dynamic index/vertex buffers and the uniform cache, so it's hit on every frame with dynamic content.\r\n\r\n## Solution\r\n\r\n| Aspect | Before | After |\r\n|--------|--------|-------|\r\n| Container | `stl::list<Free>` (linked list API) | `stl::vector<Free>` (sorted) |\r\n| Insert | `push_front` \u2014 O(n) shift | `bx::upperBound` (from bx library) + `insert` \u2014 O(log n) search + O(n) shift |\r\n| Free | Append + defer coalescing | Insert at sorted position + immediate neighbor merge |\r\n| `compact()` | `sort()` + full-list merge walk | No-op (just returns whether all allocations freed) |\r\n| Coalescing | Deferred to `compact()` | Immediate on every `free()` \u2014 checks prev/next neighbors |\r\n\r\n### Key design decisions\r\n\r\n- **`bx::upperBound`** for binary search (per maintainer suggestion), rather than hand-rolled.\r\n- **`operator>` added to `Free`** \u2014 required by `bx::compareAscending` which uses both `<` and `>`.\r\n- **Immediate coalescing** \u2014 on every free, adjacent blocks are merged in O(1) after the O(log n) search. This keeps the free list compact and avoids fragmentation buildup.\r\n- **No `std::` usage** \u2014 container is `stl::vector` (which maps to `tinystl::vector` by default), search uses `bx::upperBound` from the bx foundation library.\r\n\r\n## Changes\r\n\r\n**Single file:** `src/bgfx_p.h`\r\n\r\n- `FreeList` typedef changed from `stl::list<Free>` to `stl::vector<Free>`\r\n- `add()` calls `insertFreeBlock()` instead of `push_back()`\r\n- `remove()` uses `erase(begin())` instead of `pop_front()`\r\n- `free()` calls `insertFreeBlock()` instead of `push_front()`\r\n- `compact()` simplified to just return `0 == m_used.size()` (merging is already done)\r\n- New `insertFreeBlock()` method: uses `bx::upperBound` (bx library binary search) to find insertion point, then 3-way merge check (prev+next, prev-only, next-only, or plain insert)\r\n- `Free` struct: added `operator>` for `bx::compareAscending` compatibility\r\n\r\n## Benchmark Results\r\n\r\nTested with a purpose-built benchmark exercising dynamic buffer allocation/free churn (256 buffers, 64 churn + 32 updates per frame, 2000 measured frames, Vulkan renderer, headless):\r\n\r\n| Branch | Avg Frame Time | Ops/sec |\r\n|--------|---------------|---------|\r\n| `master` (baseline) | ~0.29 ms | ~500K |\r\n| This PR | ~0.135 ms | ~1.05M |\r\n\r\n**~2x improvement** in allocator throughput, consistent across multiple runs.\r\n\r\n## Behavioral Compatibility\r\n\r\n- All existing callers (`alloc`, `free`, `compact`, `add`, `remove`) maintain identical semantics.\r\n- No caller depends on insertion order of the free list.\r\n- The previous `compact()` behavior (sort + merge) is preserved implicitly \u2014 the list is always sorted and always coalesced.\r\n- `alloc()` still performs first-fit search from the front; with sorted order this now returns the lowest-address fit.\r\n",
+      "repository": {
+        "name": "bgfx",
+        "owner": "bkaradzic",
+        "full_name": "bkaradzic/bgfx",
+        "url": "https://github.com/bkaradzic/bgfx",
+        "logo": {
+          "owner_avatar": "https://avatars.githubusercontent.com/u/814772?v=4"
+        }
+      },
+      "author": "killerdevildog",
+      "created_at": "2026-02-14T22:57:15Z",
+      "merged_at": "2026-02-17T19:27:10Z",
+      "commits_count": 1,
+      "changed_files": 1,
+      "additions": 71,
+      "deletions": 21
+    },
+    {
+      "title": "Add wheel info subcommand",
+      "number": 669,
+      "state": "merged",
+      "url": "https://github.com/pypa/wheel/pull/669",
+      "description": "Implements GitHub issue #639: Add wheel info subcommand to display metadata about wheel files without unpacking them.\r\n\r\nFeatures:\r\n- Shows package name, version, and build information\r\n- Displays wheel format version and generator\r\n- Lists supported Python versions, ABI, and platform tags\r\n- Shows package metadata (summary, author, license, classifiers)\r\n- Displays dependencies and file count/size information\r\n- Optional verbose mode with detailed file listing\r\n- Comprehensive error handling for missing files\r\n\r\nChanges:\r\n- Add src/wheel/_commands/info.py with main implementation\r\n- Update src/wheel/_commands/__init__.py to register new command\r\n- Add tests/commands/test_info.py with comprehensive test coverage\r\n- Add docs/reference/wheel_info.rst with usage documentation\r\n- Update docs/reference/index.rst to include new command docs\r\n- Update docs/user_guide.rst with info command examples\r\n- Update docs/manpages/wheel.rst with info command reference\r\n\r\nAddresses #639\r\nSee #639",
+      "repository": {
+        "name": "wheel",
+        "owner": "pypa",
+        "full_name": "pypa/wheel",
+        "url": "https://github.com/pypa/wheel",
+        "logo": {
+          "owner_avatar": "https://avatars.githubusercontent.com/u/647025?v=4"
+        }
+      },
+      "author": "killerdevildog",
+      "created_at": "2025-07-19T06:47:49Z",
+      "merged_at": "2026-02-15T18:18:56Z",
+      "commits_count": 10,
+      "changed_files": 8,
+      "additions": 445,
+      "deletions": 1
+    },
+    {
+      "title": "perf: replace stringstream with pre-allocated string append in Screen\u2026",
+      "number": 1188,
+      "state": "merged",
+      "url": "https://github.com/ArthurSonzogni/FTXUI/pull/1188",
+      "description": "\u2026::ToString()\r\n\r\nReplace std::stringstream with std::string + reserve() + append() in Screen::ToString(), ResetPosition(), and UpdatePixelStyle(). Add Color::PrintTo() method that writes ANSI codes directly into a string buffer using snprintf, avoiding heap allocations from std::to_string() and string concatenation in Color::Print().\r\n\r\nThis eliminates per-insertion overhead from stringstream's locale facets, virtual dispatch, and internal buffer management. The string is pre-allocated to ~30 bytes per pixel to avoid reallocations.\r\n\r\nBenchmark results (80x24, 10s, Release build):\r\n- Stable Avg: 981 -> 1041 FPS (+6.1%)\r\n- P50: 1137 -> 1229 FPS (+8.1%)\r\n- P99: 1222 -> 1317 FPS (+7.8%)",
+      "repository": {
+        "name": "FTXUI",
+        "owner": "ArthurSonzogni",
+        "full_name": "ArthurSonzogni/FTXUI",
+        "url": "https://github.com/ArthurSonzogni/FTXUI",
+        "logo": {
+          "owner_avatar": "https://avatars.githubusercontent.com/u/4759106?v=4"
+        }
+      },
+      "author": "killerdevildog",
+      "created_at": "2026-02-15T06:19:04Z",
+      "merged_at": "2026-02-15T13:09:41Z",
+      "commits_count": 4,
+      "changed_files": 5,
+      "additions": 134,
+      "deletions": 55
+    },
+    {
+      "title": "perf: replace O(n\u00b2) GPUProfiler erase(0) loop with cursor + eraseRange",
+      "number": 1538,
+      "state": "merged",
+      "url": "https://github.com/nem0/LumixEngine/pull/1538",
+      "description": "GPUProfiler::frame() was calling m_queries.erase(0) in a loop, causing O(n) memmove per iteration (O(n\u00b2) total for n ready queries).\r\n\r\nReplace with a cursor that counts processed queries, then a single eraseRange(0, processed) call \u2014 O(n) total.\r\n\r\nBenchmark results (median, 1024 queries all ready):\r\n  Before: 329.61 us\r\n  After:    0.90 us  (366x faster)",
+      "repository": {
+        "name": "LumixEngine",
+        "owner": "nem0",
+        "full_name": "nem0/LumixEngine",
+        "url": "https://github.com/nem0/LumixEngine",
+        "logo": {
+          "owner_avatar": "https://avatars.githubusercontent.com/u/153526?v=4"
+        }
+      },
+      "author": "killerdevildog",
+      "created_at": "2026-02-15T00:35:11Z",
+      "merged_at": "2026-02-15T09:33:18Z",
+      "commits_count": 1,
+      "changed_files": 1,
+      "additions": 7,
+      "deletions": 3
+    },
+    {
+      "title": "Feature/d3d4linux integration",
+      "number": 3578,
+      "state": "merged",
+      "url": "https://github.com/bkaradzic/bgfx/pull/3578",
+      "description": "# D3D4Linux Integration for Shaderc\r\n\r\n## Summary\r\n\r\nEnables HLSL shader compilation on Linux and macOS via Wine and d3dcompiler_47.dll.\r\n\r\nImplements [#1869](https://github.com/bkaradzic/bgfx/issues/1869).\r\n\r\n## Changes\r\n\r\n### Build System\r\n- Added `SHADERC_CONFIG_HLSL_D3D4LINUX=1` define for Linux/macOS builds\r\n- Added d3d4linux include path to shaderc project\r\n\r\n### shaderc_hlsl.cpp\r\n- Conditional compilation to use d3d4linux on Linux/macOS, native D3D on Windows\r\n- Fixed null pointer crash when D3DCompile returns error without message\r\n- Initialized ID3DBlob pointers to NULL\r\n\r\n### d3d4linux (3rdparty)\r\n- Added d3d4linux library for Wine-based D3DCompiler access\r\n- Fixed struct size mismatch (D3D11_SIGNATURE_PARAMETER_DESC: 32\u219240 bytes)\r\n- Fixed D3DDisassemble IPC protocol bug\r\n- Updated Wine path for Wine 11+ compatibility\r\n\r\n## Usage\r\n\r\n```bash\r\nD3D4LINUX_EXE=/path/to/bgfx/3rdparty/d3d4linux/d3d4linux.exe \\\r\n./shaderc -f shader.sc -o shader.bin --type vertex --platform windows -p s_5_0\r\n```\r\n\r\n## Testing\r\n\r\nVerified on Ubuntu 24.04 with Wine 11.0:\r\n- vs_cubes.sc, fs_cubes.sc, vs_bump.sc compile successfully\r\n- D3DCompile, D3DReflect, D3DStripShader, D3DDisassemble all working\r\n\r\n---\r\n\r\n**Note for maintainers:** The following files are for review reference only and should be deleted before merging:\r\n- `implementation_log.md` - Development log detailing all changes made\r\n- `docs/d3d4linux-shaderc-support.md` - User documentation (can be kept if desired)\r\n",
+      "repository": {
+        "name": "bgfx",
+        "owner": "bkaradzic",
+        "full_name": "bkaradzic/bgfx",
+        "url": "https://github.com/bkaradzic/bgfx",
+        "logo": {
+          "owner_avatar": "https://avatars.githubusercontent.com/u/814772?v=4"
+        }
+      },
+      "author": "killerdevildog",
+      "created_at": "2026-02-04T02:02:44Z",
+      "merged_at": "2026-02-06T16:28:04Z",
+      "commits_count": 20,
+      "changed_files": 14,
+      "additions": 2040,
+      "deletions": 37
+    },
+    {
+      "title": "fix: use IsNaN() instead of == NaN() comparison in Ray.IntersectPlane",
+      "number": 317,
+      "state": "merged",
+      "url": "https://github.com/g3n/engine/pull/317",
+      "description": "Fixes #164. NaN comparisons using == never work in IEEE 754 since NaN != NaN is always true. Use the existing IsNaN() function instead.",
+      "repository": {
+        "name": "engine",
+        "owner": "g3n",
+        "full_name": "g3n/engine",
+        "url": "https://github.com/g3n/engine",
+        "logo": {
+          "owner_avatar": "https://avatars.githubusercontent.com/u/19362402?v=4"
+        }
+      },
+      "author": "killerdevildog",
+      "created_at": "2026-01-07T22:11:14Z",
+      "merged_at": "2026-01-09T20:45:53Z",
+      "commits_count": 1,
+      "changed_files": 1,
+      "additions": 1,
+      "deletions": 1
+    },
+    {
+      "title": "Fix mutable default arguments in OrderingFilter methods",
+      "number": 9742,
+      "state": "merged",
+      "url": "https://github.com/encode/django-rest-framework/pull/9742",
+      "description": "*Note*: Before submitting a code change, please review our [contributing guidelines](https://www.django-rest-framework.org/community/contributing/#pull-requests).\r\n\r\n## Description\r\n\r\n- Fixed get_default_valid_fields() and get_valid_fields() methods in filters.py\r\n- Changed context={} default parameter to context=None to prevent mutable default anti-pattern\r\n- Added proper None checking with context = {} assignment inside methods\r\n\r\nWhy this fix is important:\r\n- Mutable default arguments (context={}) create shared state across function calls\r\n- Same dict object gets reused, potentially causing unexpected side effects\r\n- This is a well-known Python anti-pattern that can lead to bugs\r\n\r\nWhat was changed:\r\n- Line 249: get_default_valid_fields(self, queryset, view, context=None)\r\n- Line 285: get_valid_fields(self, queryset, view, context=None)\r\n- Added 'if context is None: context = {}' in both methods\r\n\r\nTesting results:\r\n- All existing filter tests pass (pytest tests/test_filters.py)\r\n- Custom verification script confirms fix works correctly\r\n- Maintains backward compatibility\r\n- No breaking changes to API\r\n\r\nFix #9741\r\n",
+      "repository": {
+        "name": "django-rest-framework",
+        "owner": "encode",
+        "full_name": "encode/django-rest-framework",
+        "url": "https://github.com/encode/django-rest-framework",
+        "logo": {
+          "owner_avatar": "https://avatars.githubusercontent.com/u/19159390?v=4"
+        }
+      },
+      "author": "killerdevildog",
+      "created_at": "2025-07-18T00:45:13Z",
+      "merged_at": "2025-10-30T16:07:24Z",
+      "commits_count": 2,
+      "changed_files": 3,
+      "additions": 9,
+      "deletions": 3
+    },
+    {
+      "title": "Fix Python Scalar typing issue #27528",
+      "number": 27620,
+      "state": "merged",
+      "url": "https://github.com/opencv/opencv/pull/27620",
+      "description": "- Add ScalarInput and ScalarOutput types for better type safety\r\n- ScalarInput: Union[Sequence[float], float] for function parameters\r\n- ScalarOutput: Sequence[float] for function return values\r\n- Keep original Scalar type for backwards compatibility (deprecated)\r\n- Add refinement functions to apply new types to specific functions\r\n- Functions returning scalars now use ScalarOutput (mean, sumElems, trace)\r\n- Drawing functions now use ScalarInput for color parameters\r\n- Resolves MyPy compatibility issues with scalar return values\r\n- Maintains full backwards compatibility\r\n\r\ncloses #27528 \r\n\r\n### Pull Request Readiness Checklist\r\n\r\nSee details at https://github.com/opencv/opencv/wiki/How_to_contribute#making-a-good-pull-request\r\n\r\n- [x] I agree to contribute to the project under Apache 2 License.\r\n- [x] To the best of my knowledge, the proposed patch is not based on a code under GPL or another license that is incompatible with OpenCV\r\n- [x ] The PR is proposed to the proper branch\r\n- [x ] There is a reference to the original bug report and related work\r\n- [ ] There is accuracy test, performance test and test data in opencv_extra repository, if applicable\r\n      Patch to opencv_extra has the same branch name.\r\n- [x ] The feature is well documented and sample code can be built with the project CMake\r\n",
+      "repository": {
+        "name": "opencv",
+        "owner": "opencv",
+        "full_name": "opencv/opencv",
+        "url": "https://github.com/opencv/opencv",
+        "logo": {
+          "owner_avatar": "https://avatars.githubusercontent.com/u/5009934?v=4"
+        }
+      },
+      "author": "killerdevildog",
+      "created_at": "2025-08-01T19:23:23Z",
+      "merged_at": "2025-09-10T13:47:13Z",
+      "commits_count": 3,
+      "changed_files": 1,
+      "additions": 26,
+      "deletions": 0
+    },
+    {
+      "title": "Cumulative updates",
+      "number": 117,
+      "state": "merged",
+      "url": "https://github.com/methusalah/OpenRTS/pull/117",
+      "description": "# Java-OpenRTS Modernization - Pull Request\r\n\r\n## Overview\r\n\r\nThis pull request brings the Java-OpenRTS project up to modern standards with significant infrastructure upgrades and quality of life improvements. After working through various compatibility issues and testing extensively, the project now runs smoothly on current Java versions with enhanced functionality.\r\n\r\n## Major Changes\r\n\r\n### Java & Build System Updates\r\n- **Java 8 \u2192 Java 21**: Upgraded to modern Java LTS with improved performance and security\r\n- **Gradle 4.9 \u2192 8.10.2**: Complete build system modernization with proper dependency resolution\r\n- **Fixed deprecated JVM arguments**: Removed obsolete `-XX:MaxPermSize` setting that was causing warnings\r\n- **Updated Maven repositories**: Replaced defunct Bintray with Maven Central for reliable dependency downloads\r\n\r\n### JMonkeyEngine Modernization\r\n- **JME 3.2.x \u2192 3.8.1**: Latest stable release with LWJGL 3.x support and modern OpenGL features\r\n- **Physics Engine Upgrade**: Migrated from legacy jBullet to modern Minie physics (8.1.0 + libbulletjme 21.2.1)\r\n- **API Compatibility**: Updated all physics calls to work with Minie's improved collision detection\r\n- **Renderer Updates**: Fixed material warnings and shader compatibility issues\r\n\r\n### User Interface Enhancements\r\n- **Tabbed Navigation**: Added GUI tabs to switch between Game, Editor, and Network modes\r\n- **Improved UX**: Tabs supplement existing F1/F2/F3 keyboard shortcuts rather than replacing them\r\n- **Centered Layout**: Professional-looking tab bar with proper spacing and alignment\r\n- **Mode Persistence**: Tabs remain visible and functional across all three application modes\r\n\r\n### Networking Improvements\r\n- **Functional Multiplayer**: Create Game, Join Game, and Exit buttons now actually work\r\n- **Server Management**: Proper server startup in separate thread to prevent UI blocking  \r\n- **Client Connection**: Fixed connection handling with proper error reporting\r\n- **Serialization Fix**: Resolved \"registry locked\" errors by registering Event classes during app initialization\r\n\r\n### Code Quality & Maintenance\r\n- **Physics Migration**: Updated collision detection, terrain physics, and rigid body management for Minie\r\n- **Memory Management**: Removed deprecated PermGen settings, added modern GC configuration\r\n- **Error Handling**: Improved exception handling in networking and physics subsystems\r\n- **Build Optimization**: Disabled unused example module to prevent dual-window issues\r\n\r\n## Technical Details\r\n\r\n### Dependencies Updated\r\n```groovy\r\n// Core framework\r\njmonkeyengine: '3.8.1-stable'\r\nminie: '8.1.0'\r\nlibbulletjme: '21.2.1'\r\n\r\n// Build system  \r\ngradle: '8.10.2'\r\njava: '21'\r\n```\r\n\r\n### Key File Changes\r\n- `OpenRTSApplication.java`: Added early Event serialization registration\r\n- `GroundGUIController.java`: Implemented network button functionality\r\n- `screen.xml`: Added centered tabbed interface across all screens\r\n- `Ramp.java` & `CollisionTester.java`: Migrated physics API calls to Minie\r\n- Build files: Updated all dependency versions and compatibility settings\r\n\r\n### Testing Notes\r\n- All three modes (Game/Editor/Network) tested and working\r\n- Physics simulation runs smoothly with new Minie engine\r\n- Network multiplayer successfully creates servers and connects clients\r\n- No more compilation warnings or runtime deprecation messages\r\n- Memory usage improved with modern GC settings\r\n\r\n## Migration Impact\r\n\r\n### Breaking Changes\r\n- **Minimum Java Version**: Now requires Java 21 (was Java 8)\r\n- **Build Requirements**: Gradle 8.x required for building\r\n- **Physics API**: Some internal physics calls updated (affects custom modifications)\r\n\r\n### Backward Compatibility  \r\n- **Save Files**: Existing maps and saves remain compatible\r\n- **Assets**: All textures, models, and sounds work unchanged\r\n- **Gameplay**: All RTS mechanics function identically to before\r\n- **Shortcuts**: F1/F2/F3 keyboard shortcuts still work as expected\r\n\r\n## Future Improvements\r\n\r\nThis modernization creates a solid foundation for future enhancements:\r\n- Ready for Java 21+ features like pattern matching and records\r\n- Modern physics engine supports advanced collision scenarios\r\n- Updated UI framework enables more sophisticated interface designs\r\n- Stable networking foundation for multiplayer feature expansion\r\n\r\n## Testing Instructions\r\n\r\n1. Ensure Java 21 is installed\r\n2. Clone and checkout the `cumulative-updates` branch  \r\n3. Run `./gradlew run` to test the application\r\n4. Try switching modes with both tabs and F-keys\r\n5. Test network functionality with Create Game \u2192 Join Game workflow\r\n\r\n\r\n*This modernization took considerable effort to maintain backward compatibility while bringing the codebase up to current standards. All existing functionality has been preserved and enhanced.*\r\n",
+      "repository": {
+        "name": "OpenRTS",
+        "owner": "methusalah",
+        "full_name": "methusalah/OpenRTS",
+        "url": "https://github.com/methusalah/OpenRTS",
+        "logo": {
+          "owner_avatar": "https://avatars.githubusercontent.com/u/8062286?v=4"
+        }
+      },
+      "author": "killerdevildog",
+      "created_at": "2025-08-16T10:10:41Z",
+      "merged_at": "2025-09-05T15:59:47Z",
+      "commits_count": 2,
+      "changed_files": 22,
+      "additions": 32763,
+      "deletions": 26272
+    },
+    {
+      "title": "Make maxWalkPath configurable in Field.pm",
+      "number": 4070,
+      "state": "merged",
+      "url": "https://github.com/OpenKore/openkore/pull/4070",
+      "description": "- Replace hardcoded value 17 with configurable maxWalkPathDistance\r\n- Add maxWalkPathDistance config option with default value 17\r\n- Corresponds to server's max_walk_path setting (hercules/rathena)\r\n- Maintains backward compatibility with default behavior\r\n\r\nResolves TODO in Field.pm line 423",
+      "repository": {
+        "name": "openkore",
+        "owner": "OpenKore",
+        "full_name": "OpenKore/openkore",
+        "url": "https://github.com/OpenKore/openkore",
+        "logo": {
+          "owner_avatar": "https://avatars.githubusercontent.com/u/621950?v=4"
+        }
+      },
+      "author": "killerdevildog",
+      "created_at": "2025-08-16T07:29:17Z",
+      "merged_at": "2025-08-16T12:44:45Z",
+      "commits_count": 1,
+      "changed_files": 2,
+      "additions": 8,
+      "deletions": 4
+    },
+    {
+      "title": "Fix ValueError in file_uploader.py by converting @gen.coroutine to as\u2026",
+      "number": 3523,
+      "state": "merged",
+      "url": "https://github.com/tornadoweb/tornado/pull/3523",
+      "description": "\u2026ync/await\r\n\r\nFixes #3182\r\n\r\nThe file_uploader.py demo was failing with ValueError when trying to upload files because @gen.coroutine decorated functions return tornado.concurrent.Future objects, but asyncio.run() expects native coroutines.\r\n\r\nThis change converts the @gen.coroutine decorated functions to native async/await syntax, which is the modern recommended approach and resolves the compatibility issue with asyncio.run().\r\n\r\nChanges:\r\n- Remove tornado.gen import\r\n- Convert @gen.coroutine decorators to async def\r\n- Convert all yield statements to await\r\n- Maintains backward compatibility with existing Tornado versions",
+      "repository": {
+        "name": "tornado",
+        "owner": "tornadoweb",
+        "full_name": "tornadoweb/tornado",
+        "url": "https://github.com/tornadoweb/tornado",
+        "logo": {
+          "owner_avatar": "https://avatars.githubusercontent.com/u/7468980?v=4"
+        }
+      },
+      "author": "killerdevildog",
+      "created_at": "2025-07-28T02:48:48Z",
+      "merged_at": "2025-08-05T20:18:17Z",
+      "commits_count": 1,
+      "changed_files": 1,
+      "additions": 12,
+      "deletions": 16
+    },
+    {
+      "title": "Fix web keyboard input for shift+number and numpad keys",
+      "number": 144,
+      "state": "merged",
+      "url": "https://github.com/matrixcascade/PainterEngine/pull/144",
+      "description": "Fixes #78: Web\u8f93\u5165shift+2\u548c\u5c0f\u952e\u76d8\u8fd4\u56de\u9519\u8bef\u7684\u5b57\u7b26\u4e32\r\n\r\nThis commit resolves keyboard input issues in the WebAssembly platform where:\r\n- Pressing Shift+2 produced '2' instead of '@'\r\n- Pressing Shift+9 didn't produce '(' properly\r\n- Numpad digits produced wrong characters (e.g., numpad 1 produced 'Y')\r\n\r\nChanges made to platform/webassembly/main.c:\r\n- Added SDL_GetModState() to detect shift modifier state\r\n- Implemented proper shift+number mapping using US keyboard layout\r\n- Added dedicated numpad key handling (SDLK_KP_0 to SDLK_KP_9)\r\n- Enhanced character mapping for common shift combinations\r\n- Maintained backward compatibility with existing functionality\r\n\r\nThe fix ensures:\r\n\u2713 Shift+2 now correctly produces '@'\r\n\u2713 Shift+9 now correctly produces '('\r\n\u2713 All numpad keys (0-9) produce correct digits\r\n\u2713 All shift+number combinations work properly\r\n\u2713 Regular number keys without shift work as before \u2713 International keyboard support maintained\r\n\r\nTested with comprehensive validation covering all reported issues and additional edge cases. All tests pass successfully.",
+      "repository": {
+        "name": "PainterEngine",
+        "owner": "matrixcascade",
+        "full_name": "matrixcascade/PainterEngine",
+        "url": "https://github.com/matrixcascade/PainterEngine",
+        "logo": {
+          "owner_avatar": "https://avatars.githubusercontent.com/u/13924556?v=4"
+        }
+      },
+      "author": "killerdevildog",
+      "created_at": "2025-08-01T16:34:23Z",
+      "merged_at": "2025-08-04T01:16:29Z",
+      "commits_count": 1,
+      "changed_files": 1,
+      "additions": 52,
+      "deletions": 1
+    },
+    {
+      "title": "Fix image resize crash in set_width method",
+      "number": 659,
+      "state": "merged",
+      "url": "https://github.com/phase1geo/Minder/pull/659",
+      "description": "- Add validation for crop dimensions to prevent division by zero\r\n- Add target width validation to ensure positive values\r\n- Add pixbuf extraction validation to handle surface errors\r\n- Add scaled height validation to prevent GdkPixbuf assertions\r\n- Add graceful fallback when scaling operations fail\r\n- Resolves crashes when adjusting inserted images\r\nFixes #585\r\nNote: While I was unable to reproduce the exact crash sequence shown in the issue video on the current master branch (possibly due to system-specific differences like GTK versions, image formats, or hardware environments), the video's terminal output demonstrates a failure during image resizing that triggers multiple GTK warnings about invalid (typically too large) surface/pattern sizes in widgets such as DynamicNotebook, GtkPaned, GtkBox, HdyDeck, and MainWindow, followed by critical GdkPixbuf assertions failing on scaling operations (e.g., 'dest_height > 0' failed in gdk_pixbuf_scale_simple) and pixbuf property access (e.g., 'GDK_IS_PIXBUF (pixbuf)' failed in gdk_pixbuf_get_height/width). Analysis of these errors confirms that this commit directly addresses them by introducing defensive validations in the NodeImage.set_width method: it checks crop dimensions to prevent division by zero, ensures target widths are positive before proceeding, validates pixbuf extraction from surfaces to skip on null results, clamps scaled heights to a minimum of 1 to avoid non-positive dimension assertions, and implements a graceful fallback to retain the original buffer if scaling fails entirely\u2014preventing the error propagation that leads to these secondary GTK warnings and UI failures. These safeguards enhance robustness against edge cases in image handling, as reported in #585 from 2024, even though the underlying resizing code originated around 2018\u2014ensuring the app doesn't crash for most users under similar conditions.\r\n<img width=\"819\" height=\"494\" alt=\"Screenshot from 2025-08-02 20-16-56\" src=\"https://github.com/user-attachments/assets/6591abe5-2490-4e7d-9b08-f7442d344e67\" />\r\nThis terminal output from the video highlights the exact failure modes (e.g., invalid scaling parameters and null pixbuf handling) that my commit targets and resolves, confirming the fix's effectiveness in preventing such crashes.",
+      "repository": {
+        "name": "Minder",
+        "owner": "phase1geo",
+        "full_name": "phase1geo/Minder",
+        "url": "https://github.com/phase1geo/Minder",
+        "logo": {
+          "owner_avatar": "https://avatars.githubusercontent.com/u/22555565?v=4"
+        }
+      },
+      "author": "killerdevildog",
+      "created_at": "2025-08-03T02:21:27Z",
+      "merged_at": "2025-08-03T04:16:58Z",
+      "commits_count": 1,
+      "changed_files": 1,
+      "additions": 32,
+      "deletions": 1
+    },
+    {
+      "title": "Enable CMake testing infrastructure for unit tests",
+      "number": 289,
+      "state": "merged",
+      "url": "https://github.com/MyGUI/mygui/pull/289",
+      "description": "- Add enable_testing() call when MYGUI_BUILD_UNITTESTS is enabled\r\n- Register unit tests with add_test() in mygui_unit_test function\r\n- Set working directory for tests to find resources properly\r\n- Maintains full backwards compatibility with existing build process\r\n- Enables running tests via 'ctest' and 'make check' commands\r\n\r\nFixes #273",
+      "repository": {
+        "name": "mygui",
+        "owner": "MyGUI",
+        "full_name": "MyGUI/mygui",
+        "url": "https://github.com/MyGUI/mygui",
+        "logo": {
+          "owner_avatar": "https://avatars.githubusercontent.com/u/8388582?v=4"
+        }
+      },
+      "author": "killerdevildog",
+      "created_at": "2025-08-02T06:33:21Z",
+      "merged_at": "2025-08-02T23:03:39Z",
+      "commits_count": 1,
+      "changed_files": 2,
+      "additions": 13,
+      "deletions": 0
+    },
+    {
+      "title": "[build] Add ARM64 support to Linux builds",
+      "number": 5075,
+      "state": "merged",
+      "url": "https://github.com/raysan5/raylib/pull/5075",
+      "description": "- Add ubuntu-24.04-arm runner for native ARM64 compilation\r\n- Support building both static and shared libraries for ARM64\r\n- Maintain backwards compatibility with existing x86/x64 builds\r\n- Addresses issue #5051 for ARM64 pre-compiled binaries\r\n\r\nExpected output: raylib-X.X-linux_arm64.tar.gz in releases",
+      "repository": {
+        "name": "raylib",
+        "owner": "raysan5",
+        "full_name": "raysan5/raylib",
+        "url": "https://github.com/raysan5/raylib",
+        "logo": {
+          "owner_avatar": "https://avatars.githubusercontent.com/u/5766837?v=4"
+        }
+      },
+      "author": "killerdevildog",
+      "created_at": "2025-07-31T04:43:51Z",
+      "merged_at": "2025-08-01T18:07:56Z",
+      "commits_count": 1,
+      "changed_files": 1,
+      "additions": 19,
+      "deletions": 5
+    },
+    {
+      "title": "Fix/scrollbar marks shell integration",
+      "number": 19185,
+      "state": "merged",
+      "url": "https://github.com/microsoft/terminal/pull/19185",
+      "description": "Fix scrollbar marks not showing with shell integration\r\nFixes #19104\r\n\r\nThis PR resolves an issue where scrollbar marks created by shell integration sequences (OSC 133 FTCS, OSC 1337 iTerm2, and OSC 9;12 ConEmu sequences) were not visible on the scrollbar until the user manually scrolled. The problem was that while marks were being created in the buffer correctly, the UI wasn't being notified to refresh the scrollbar display. The fix adds a new NotifyShellIntegrationMark() method to the ITerminalApi interface that calls _NotifyScrollEvent() to trigger scrollbar refresh, and updates all shell integration sequence handlers in AdaptDispatch to call this notification method after creating marks. This ensures scrollbar marks appear immediately when shell integration sequences are processed, bringing feature parity between auto-detected and shell-integration-based marks.\r\n\r\n## PR Checklist\r\n- [ x] Closes #19104\r\n- [ x] Tests added/passed\r\n- [ x] Documentation updated\r\n   - If checked, please file a pull request on [our docs repo](https://github.com/MicrosoftDocs/terminal) and link it here: #xxx\r\n- [NA ] Schema updated (if necessary)\r\n",
+      "repository": {
+        "name": "terminal",
+        "owner": "microsoft",
+        "full_name": "microsoft/terminal",
+        "url": "https://github.com/microsoft/terminal",
+        "logo": {
+          "owner_avatar": "https://avatars.githubusercontent.com/u/6154722?v=4"
+        }
+      },
+      "author": "killerdevildog",
+      "created_at": "2025-07-29T01:03:03Z",
+      "merged_at": "2025-07-29T17:20:48Z",
+      "commits_count": 4,
+      "changed_files": 7,
+      "additions": 25,
+      "deletions": 0
+    },
+    {
+      "title": "Fix tic ids csv structure check",
+      "number": 2,
+      "state": "merged",
+      "url": "https://github.com/nasa/ExoMiner/pull/2",
+      "description": "\u201cNew validate_tic_ids_csv_structure keeps bad TIC data out of the pipeline.\u201d\r\n\r\n\u201cPipeline now halts on missing columns or empty CSV\u2014no silent failures.\u201d\r\n\r\n\u201cRow\u2011level error messages pinpoint exactly where data breaks.\u201d\r\n\r\n\u201cSector\u2011run must match X\u2011Y; anything else is kicked back.\u201d\r\n\r\n\u201cNumeric check enforces true TIC IDs (ints or floats both handled).\u201d\r\n\r\n\u201cAdded tests: good data passes; bad IDs, bad ranges, empties all fail.\u201d\r\n\r\n\u201cValidation wired into run_pipeline.py: one call, full protection.\u201d\r\n\r\n\r\nresolves previous TODO NOTES about id validation. ",
+      "repository": {
+        "name": "ExoMiner",
+        "owner": "nasa",
+        "full_name": "nasa/ExoMiner",
+        "url": "https://github.com/nasa/ExoMiner",
+        "logo": {
+          "owner_avatar": "https://avatars.githubusercontent.com/u/848102?v=4"
+        }
+      },
+      "author": "killerdevildog",
+      "created_at": "2025-07-21T20:39:45Z",
+      "merged_at": "2025-07-23T18:23:55Z",
+      "commits_count": 2,
+      "changed_files": 3,
+      "additions": 152,
+      "deletions": 2
+    },
+    {
+      "title": "Fix GPGME >= 2.0.0 compatibility issue #2048",
+      "number": 2050,
+      "state": "merged",
+      "url": "https://github.com/profanity-im/profanity/pull/2050",
+      "description": "Replace deprecated gpgme_key_get_string_attr with modern API\r\n\r\nThis commit fixes the build failure against GPGME >= 2.0.0 where gpgme_key_get_string_attr and GPGME_ATTR_EMAIL were removed.\r\n\r\nChanges made:\r\n- Replaced direct call to gpgme_key_get_string_attr(key, GPGME_ATTR_EMAIL, NULL, 0)\r\n- Added new helper function _gpgme_key_get_email() with backwards compatibility\r\n- Function uses conditional compilation to support both old and new GPGME versions\r\n\r\nBackwards Compatibility:\r\n- GPGME < 2.0.0: Uses gpgme_key_get_string_attr() if GPGME_ATTR_EMAIL is available\r\n- GPGME >= 2.0.0: Uses modern key->uids->email API\r\n\r\nForward Compatibility:\r\n- Code compiles successfully with GPGME 2.0.0+ where deprecated functions are removed\r\n- Uses modern GPGME API that iterates through key user IDs to find email addresses\r\n\r\nTesting:\r\n- Tested with GPGME 1.18.0 (backwards compatibility confirmed)\r\n- Tested compilation compatibility for both old and new GPGME versions\r\n- Verified the exact error from issue #2048 is resolved\r\n- Confirmed no regression in functionality\r\n\r\nFixes: #2048\r\nResolves compilation error: 'gpgme_key_get_string_attr' undeclared\r\nResolves compilation error: 'GPGME_ATTR_EMAIL' undeclared\r\n\r\n<!--- Make sure to read CONTRIBUTING.md -->\r\n<!--- It mentions the rules to follow and helpful tools -->\r\n\r\n<!-- For completed items, change [ ] to [x]. -->\r\n- [x ] I ran valgrind when using my new feature\r\n\r\n### How to test the functionality\r\nUse as normal just added backwards compatibility\r\n",
+      "repository": {
+        "name": "profanity",
+        "owner": "profanity-im",
+        "full_name": "profanity-im/profanity",
+        "url": "https://github.com/profanity-im/profanity",
+        "logo": {
+          "owner_avatar": "https://avatars.githubusercontent.com/u/49746998?v=4"
+        }
+      },
+      "author": "killerdevildog",
+      "created_at": "2025-07-23T02:38:00Z",
+      "merged_at": "2025-07-23T07:00:17Z",
+      "commits_count": 1,
+      "changed_files": 1,
+      "additions": 36,
+      "deletions": 1
+    },
+    {
+      "title": "Fix tab right-click crash (issue #655): add defensive null checks to \u2026",
+      "number": 656,
+      "state": "merged",
+      "url": "https://github.com/phase1geo/Minder/pull/656",
+      "description": "\u2026tab context menu handler\r\n\r\nAddresses #655 ",
+      "repository": {
+        "name": "Minder",
+        "owner": "phase1geo",
+        "full_name": "phase1geo/Minder",
+        "url": "https://github.com/phase1geo/Minder",
+        "logo": {
+          "owner_avatar": "https://avatars.githubusercontent.com/u/22555565?v=4"
+        }
+      },
+      "author": "killerdevildog",
+      "created_at": "2025-07-19T03:23:23Z",
+      "merged_at": "2025-07-20T19:49:10Z",
+      "commits_count": 1,
+      "changed_files": 1,
+      "additions": 22,
+      "deletions": 15
+    },
+    {
+      "title": "Fix RichTxt::SetRefreshFrom logic (issue #137): move r_type assignmen\u2026",
+      "number": 293,
+      "state": "merged",
+      "url": "https://github.com/ultimatepp/ultimatepp/pull/293",
+      "description": "\u2026t after condition\r\nFixes #137",
+      "repository": {
+        "name": "ultimatepp",
+        "owner": "ultimatepp",
+        "full_name": "ultimatepp/ultimatepp",
+        "url": "https://github.com/ultimatepp/ultimatepp",
+        "logo": {
+          "owner_avatar": "https://avatars.githubusercontent.com/u/6873503?v=4"
+        }
+      },
+      "author": "killerdevildog",
+      "created_at": "2025-07-19T05:32:33Z",
+      "merged_at": "2025-07-19T11:17:27Z",
+      "commits_count": 1,
+      "changed_files": 1,
+      "additions": 5,
+      "deletions": 5
+    },
+    {
+      "title": "fix: Remove duplicate source file entries in CMakeLists.txt",
+      "number": 438,
+      "state": "merged",
+      "url": "https://github.com/cycfi/elements/pull/438",
+      "description": "- Removed duplicate entries for src/support/text_utils.cpp (appeared 3 times)\r\n- Removed duplicate entry for src/support/receiver.cpp (appeared 2 times)\r\n- Removed duplicate entry for src/support/theme.cpp (appeared 2 times)\r\n\r\nThis improves build efficiency and prevents potential linking issues. Build verified to work correctly after changes.",
+      "repository": {
+        "name": "elements",
+        "owner": "cycfi",
+        "full_name": "cycfi/elements",
+        "url": "https://github.com/cycfi/elements",
+        "logo": {
+          "owner_avatar": "https://avatars.githubusercontent.com/u/17003623?v=4"
+        }
+      },
+      "author": "killerdevildog",
+      "created_at": "2025-07-18T04:48:54Z",
+      "merged_at": "2025-07-18T11:44:48Z",
+      "commits_count": 1,
+      "changed_files": 1,
+      "additions": 0,
+      "deletions": 4
+    },
+    {
+      "title": "Implement proper packaging for ShaderExplorer sample",
+      "number": 1613,
+      "state": "merged",
+      "url": "https://github.com/ezEngine/ezEngine/pull/1613",
+      "description": "Replace hardcoded Android-specific packaging with cross-platform solution:\r\n\r\n- Use ez_package_files() for modern cross-platform packaging support\r\n- Add packaging for required data files (shaders and sample data)\r\n- Implement Android fallback with proper error handling and documentation\r\n- Add conditional packaging for Vulkan shader cache when available\r\n- Improve code organization with clear comments and structure\r\n\r\nKey improvements:\r\n* Uses ezEngine's official packaging API (ez_package_files)\r\n* Maintains backward compatibility with Android custom commands\r\n* Adds proper directory creation before copy operations\r\n* Includes helpful build-time comments for each packaging step\r\n* Conditional logic prevents build failures when shader cache is missing\r\n\r\nTesting performed:\r\n* Verified Linux build completes successfully (740/740 targets built)\r\n* Validated Android packaging logic with simulation tests\r\n* Confirmed file copy operations work correctly (139 files tested)\r\n* Checked source directories exist and are accessible\r\n* Tested conditional shader cache packaging logic\r\n\r\nResolves TODO: 'Add actual packaging code' in ShaderExplorer CMakeLists.txt",
+      "repository": {
+        "name": "ezEngine",
+        "owner": "ezEngine",
+        "full_name": "ezEngine/ezEngine",
+        "url": "https://github.com/ezEngine/ezEngine",
+        "logo": {
+          "owner_avatar": "https://avatars.githubusercontent.com/u/7082461?v=4"
+        }
+      },
+      "author": "killerdevildog",
+      "created_at": "2025-07-17T19:08:06Z",
+      "merged_at": "2025-07-18T04:38:29Z",
+      "commits_count": 2,
+      "changed_files": 2,
+      "additions": 27,
+      "deletions": 14
+    }
+  ]
+}

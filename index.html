@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Quayly Rimer -- Portfolio</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="./assets/favicon/q.png" rel="icon">
+  <link href="./assets/favicon/q.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css?v=20250807" rel="stylesheet">
+
+  <!-- EmailJS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function(){
+        emailjs.init({
+          publicKey: "LdZGmrC5TryOZuLeL",
+        });
+    })();
+  </script>
+
+</head><body class="index-page">
+
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+      <img src="assets/img/profileq.jpg" alt="QUAYLYN RIMER" class="img-fluid rounded-circle">
+    </div>
+
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+      <h1 class="sitename">Quaylyn Rimer</h1>
+    </a>
+
+    <div class="company-name text-center">
+      <span>HandyNation LLC</span>
+    </div>
+
+    <div class="social-links text-center">
+      <a href="mailto:software.quaylynrimer@gmail.com" class="email"><i class="bi bi-envelope"></i></a>
+      <a href="https://github.com/killerdevildog" class="github"><i class="bi bi-github"></i></a>
+      <a href="https://gitlab.com/killerdevildog" class="gitlab"><i class="bi bi-gitlab"></i></a>
+      <a href="#" class="bitbucket"><i class="bi bi-git"></i></a>
+      <a href="#" class="codeberg"><i class="bi bi-code-square"></i></a>
+      <a href="#" class="sourceforge"><i class="bi bi-tools"></i></a>
+      <a href="https://launchpad.net/~killerdevildog" class="launchpad"><i class="bi bi-ubuntu"></i></a>
+    </div>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
+        <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
+        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
+        <li><a href="resume/resume.html"><i class="bi bi-download navicon"></i> Resume PDF</a></li>
+        <li><a href="portfolio/portfolio.html"><i class="bi bi-file-earmark-pdf navicon"></i> Portfolio PDF</a></li>
+        <li><a href="#portfolio"><i class="bi bi-images navicon"></i>Education</a></li>
+        <li><a href="#pullrequests"><i class="bi bi-git navicon"></i> Contributions</a></li>
+        <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
+        <li class="dropdown"><a href="#"><i class="bi bi-folder navicon"></i> <span>Contributed Projects</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <ul id="projects-dropdown">
+            <!-- Projects will be loaded dynamically from projects.json -->
+            <li><a href="#" class="dropdown-loading">Loading projects...</a></li>
+          </ul>
+        </li>
+        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <img src="assets/img/mainscreen.png" alt="" data-aos="fade-in" class="">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <h2>Quaylyn Rimer</h2>
+        <p>I'm a <span class="typed" data-typed-items="Designer, Developer, Freelancer">Designer</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+        <p class="hero-languages-text">I can program with <span class="typed-languages" data-typed-items="C++, Python, JavaScript, OpenGL, React.js, Node.js, PHP, HTML5, CSS3, MongoDB, PostgreSQL, Django, Flutter, Assembly, GLSL, WebGL, Express.js, Vue.js, Angular, GraphQL">C++</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+      
+      <!-- Terminal-style overlay -->
+      <div class="terminal-overlay"></div>
+      
+      <!-- Content with higher z-index -->
+      <div class="about-content-wrapper">
+
+      <!-- Section Title -->
+      <div class="container section-title about-section-title" data-aos="fade-up">
+        <h2>About</h2>
+        <p>Passionate about creating innovative solutions through clean, efficient code and collaborative development. I believe in building not just applications, but meaningful digital experiences that make a positive impact on users and communities.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4 justify-content-center">
+          <div class="col-lg-4">
+            <img src="assets/img/profileq.jpg" class="img-fluid about-profile-img" alt="Quaylyn Rimer">
+          </div>
+          <div class="col-lg-8 content about-content">
+            <h2>Full Stack Developer & Software Engineer.</h2>
+            <p class="fst-italic py-3 description">
+              Dedicated to crafting user-centered digital experiences through thoughtful design and robust development. I combine technical expertise with creative problem-solving to build applications that are both functional and delightful to use.
+            </p>
+            <div class="row">
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>https://github.com/killerdevildog</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+1 725 208 2737</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Virgin, USA</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>31</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>software.quaylynrimer@gmail.com</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span class="about-freelance-status">Available</span></li>
+                </ul>
+              </div>
+            </div>
+            <p class="py-3 about-conclusion">
+              My approach to development emphasizes clean architecture, maintainable code, and continuous learning. I believe in ethical practices, transparent communication, and delivering solutions that not only meet requirements but exceed expectations. Every project is an opportunity to grow and contribute positively to the developer community.
+            </p>
+          </div>
+        </div>
+
+      </div>
+      
+      </div><!-- Close terminal background wrapper -->
+
+    </section><!-- /About Section -->
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item">
+              <i class="bi bi-git"></i>
+              <span id="stat-merged-prs" data-purecounter-start="0" data-purecounter-end="34" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Merged Pull Requests</strong> <span>accepted upstream</span></p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item">
+              <i class="bi bi-diagram-3"></i>
+              <span id="stat-upstream-projects" data-purecounter-start="0" data-purecounter-end="31" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Upstream Projects</strong> <span>open source repositories</span></p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item">
+              <i class="bi bi-journal-richtext"></i>
+              <span id="stat-case-studies" data-purecounter-start="0" data-purecounter-end="57" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Case Studies</strong> <span>in the portfolio PDF</span></p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item">
+              <i class="bi bi-bug"></i>
+              <span id="stat-issues-resolved" data-purecounter-start="0" data-purecounter-end="17" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Issues Resolved</strong> <span>reported and closed as completed</span></p>
+            </div>
+          </div><!-- End Stats Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Stats Section -->
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Competence</h2>
+        <p>Continuously developing technical expertise across multiple domains while maintaining focus on best practices, code quality, and innovative problem-solving approaches</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row skills-content skills-animation">
+
+          <div class="col-lg-6">
+
+            <div class="progress">
+              <span class="skill"><span>HTML</span> <i class="val">100%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>CSS</span> <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>JavaScript</span> <i class="val">75%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>C++</span> <i class="val">0%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>Python</span> <i class="val">0%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+          </div>
+
+          <div class="col-lg-6">
+
+            <div class="progress">
+              <span class="skill"><span>PHP</span> <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>C</span> <i class="val">0%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>CMake</span> <i class="val">0%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>Shell</span> <i class="val">0%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>Photoshop</span> <i class="val">55%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Skills Section -->
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Resume</h2>
+        <p>A journey of continuous growth and learning in software development, driven by passion for creating meaningful digital solutions and contributing to innovative projects that make a difference.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Summary</h3>
+
+            <div class="resume-item pb-0">
+              <h4>Quaylyn Rimer</h4>
+              <p><em>Innovative and detail-oriented Full Stack Developer with 3+ years of experience designing and developing user-centered web applications and websites from initial concept to final deployment.</em></p>
+              <ul>
+                <li>Virgin, USA</li>
+                <li>+1 725 208 2737</li>
+                <li>software.quaylynrimer@gmail.com</li>
+              </ul>
+            </div><!-- End Resume Item -->
+
+            <h3 class="resume-title">Background</h3>
+            <div class="resume-item">
+              <h4>Computer Developer</h4>
+              <h5>Since 2013</h5>
+              <p><em>Self-taught and passionate about technology</em></p>
+              <p>Over a decade of experience in web development, constantly learning and adapting to new technologies and frameworks to deliver modern, efficient solutions.</p>
+            </div><!-- End Resume Item -->
+
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="resume-title">Programming Journey</h3>
+            <div class="resume-item">
+              <h4>First Program</h4>
+              <h5>2009</h5>
+              <p><em>The beginning of my coding adventure</em></p>
+              <p>Wrote my first program, sparking a passion for programming that would shape my career path.</p>
+            </div><!-- End Resume Item -->
+
+            <div class="resume-item">
+              <h4>Computer Graphics & C Programming</h4>
+              <h5>2010</h5>
+              <p><em>Foundation in graphics and systems programming</em></p>
+              <p>Studied computer graphics principles and gained proficiency in C language programming, building a strong foundation in low-level programming concepts.</p>
+            </div><!-- End Resume Item -->
+
+            <div class="resume-item">
+              <h4>Python Programming</h4>
+              <h5>2013</h5>
+              <p><em>Transition to high-level programming</em></p>
+              <p>Started learning Python, expanding my programming toolkit with a versatile, high-level language perfect for rapid development and automation.</p>
+            </div><!-- End Resume Item -->
+
+            <div class="resume-item">
+              <h4>OpenGL Programming</h4>
+              <h5>2016</h5>
+              <p><em>Advanced graphics programming</em></p>
+              <p>Delved into OpenGL programming, combining graphics knowledge with advanced rendering techniques for 3D applications.</p>
+            </div><!-- End Resume Item -->
+
+            <div class="resume-item">
+              <h4>Web Development & Modern Frameworks</h4>
+              <h5>2014-2018</h5>
+              <p><em>Full-stack web development mastery</em></p>
+              <p>Mastered HTML5, CSS3, JavaScript ES6+, React.js, Node.js, Express.js, and MongoDB. Built responsive web applications and RESTful APIs for various client projects.</p>
+            </div><!-- End Resume Item -->
+
+            <div class="resume-item">
+              <h4>Database & Backend Technologies</h4>
+              <h5>2015-2019</h5>
+              <p><em>Server-side development expertise</em></p>
+              <p>Gained proficiency in MySQL, PostgreSQL, PHP Laravel, Django, and cloud deployment using AWS and Docker for scalable application development.</p>
+            </div><!-- End Resume Item -->
+
+            <div class="resume-item">
+              <h4>Mobile & Cross-Platform Development</h4>
+              <h5>2017-2020</h5>
+              <p><em>Expanding to mobile platforms</em></p>
+              <p>Learned React Native, Flutter, and Android development with Java/Kotlin to create cross-platform mobile applications and native mobile experiences.</p>
+            </div><!-- End Resume Item -->
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Resume Section -->
+
+    <!-- Education Section -->
+    <section id="portfolio" class="portfolio section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Education</h2>
+        <p>Self-directed learning through comprehensive YouTube tutorials and online courses. A curated selection of programming tutorials that shaped my development journey across multiple languages and frameworks.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="isotope-layout" data-default-filter=".filter-cpp" data-layout="masonry" data-sort="original-order">
+
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter=".filter-cpp" class="filter-active">C/C++</li>
+            <li data-filter=".filter-web">Web Dev</li>
+            <li data-filter=".filter-frameworks">Frameworks</li>
+            <li data-filter=".filter-systems">Systems</li>
+            <li data-filter=".filter-mobile">Mobile</li>
+            <li data-filter=".filter-data">Data Science</li>
+            <li data-filter=".filter-game">Game Dev</li>
+            <li data-filter="*">All</li>
+          </ul><!-- End Portfolio Filters -->
+
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200" id="tutorials-container">
+            <!-- Tutorials will be loaded dynamically from education_tutorials.json -->
+          </div><!-- End Portfolio Container -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Section -->
+
+    <!-- Project Detail Section (Hidden by default) -->
+    <section id="project-detail" class="portfolio section" style="display: none;">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <!-- Back button -->
+            <div class="mb-4">
+              <button id="back-to-main" class="btn btn-outline-primary">
+                <i class="bi bi-arrow-left"></i> Back to Portfolio
+              </button>
+            </div>
+            
+            <!-- Project content will be loaded here -->
+            <div id="project-content">
+              <!-- Dynamic content will be inserted here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Project Detail Section -->
+
+
+
+    <!-- Pull Requests Section -->
+    <section id="pullrequests" class="portfolio section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Accepted Open Source Contributions</h2>
+        <p>Merged pull requests accepted into upstream projects. Explore the code changes and the projects that integrated my work.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-12">
+            
+            <div id="pr-stats" class="row gy-4 mb-4" aria-live="polite">
+              <div class="col-sm-6">
+                <div class="stats-item text-center">
+                  <i class="bi bi-check-circle pr-stats-merged"></i>
+                  <span id="merged-prs">0</span>
+                  <p><strong>Merged Pull Requests</strong></p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="stats-item text-center">
+                  <i class="bi bi-folder pr-stats-repos"></i>
+                  <span id="unique-repos">0</span>
+                  <p><strong>Upstream Projects</strong></p>
+                </div>
+              </div>
+            </div>
+            <p id="contributions-updated" class="text-center"></p>
+            <div class="mb-4">
+              <h3>Projects that accepted my contributions</h3>
+              <p>Explore merged code, build, and test changes in each upstream repository.</p>
+              <div id="accepted-projects" class="d-flex flex-wrap gap-2"></div>
+            </div>
+
+            <!-- Pull Request Slider -->
+            <div id="pr-slider" class="swiper">
+              <div class="swiper-wrapper" id="pr-slides">
+
+              </div>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+
+            <!-- Loading indicator -->
+            <div id="pr-loading" class="text-center py-5">
+              <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <p class="mt-3">Loading accepted contributions...</p>
+            </div>
+
+            <!-- Error message -->
+            <div id="pr-error" class="text-center py-5">
+              <i class="bi bi-exclamation-triangle text-warning pr-error-icon"></i>
+              <p class="mt-3">Unable to load accepted contributions. Please try again later.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Pull Requests Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Services</h2>
+        <p>I believe in delivering exceptional value through quality code, ethical practices, and genuine care for every project. My commitment to excellence drives me to create solutions that not only meet technical requirements but also contribute positively to user experiences and business growth.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon flex-shrink-0"><i class="bi bi-briefcase"></i></div>
+            <div>
+              <h4 class="title"><a href="service-details.html" class="stretched-link">Full-Stack Development</a></h4>
+              <p class="description">Creating comprehensive web solutions with integrity and attention to detail, ensuring robust, scalable applications that serve users effectively</p>
+            </div>
+          </div>
+          <!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon flex-shrink-0"><i class="bi bi-card-checklist"></i></div>
+            <div>
+              <h4 class="title"><a href="service-details.html" class="stretched-link">Code Quality Assurance</a></h4>
+              <p class="description">Committed to writing clean, maintainable code with thorough testing and documentation, fostering collaborative development environments</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon flex-shrink-0"><i class="bi bi-bar-chart"></i></div>
+            <div>
+              <h4 class="title"><a href="service-details.html" class="stretched-link">Performance Optimization</a></h4>
+              <p class="description">Enhancing application performance with ethical optimization practices, ensuring efficient resource usage and excellent user experiences</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon flex-shrink-0"><i class="bi bi-binoculars"></i></div>
+            <div>
+              <h4 class="title"><a href="service-details.html" class="stretched-link">Problem Analysis</a></h4>
+              <p class="description">Approaching challenges with empathy and thorough analysis, finding solutions that balance technical excellence with human-centered design</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon flex-shrink-0"><i class="bi bi-brightness-high"></i></div>
+            <div>
+              <h4 class="title"><a href="service-details.html" class="stretched-link">Continuous Learning</a></h4>
+              <p class="description">Embracing growth mindset and staying current with technology trends while maintaining core values of honesty and reliability</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="600">
+            <div class="icon flex-shrink-0"><i class="bi bi-calendar4-week"></i></div>
+            <div>
+              <h4 class="title"><a href="service-details.html" class="stretched-link">Project Management</a></h4>
+              <p class="description">Managing projects with transparency and clear communication, ensuring timely delivery while maintaining quality standards and team morale</p>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Testimonials</h2>
+        <p>Building meaningful relationships through honest communication, reliable delivery, and genuine care for every project outcome</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "320": {
+                  "slidesPerView": 1,
+                  "spaceBetween": 40
+                },
+                "1200": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 1
+                }
+              }
+            }
+          </script>
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Working with this developer has been exceptional. Their commitment to quality code and ethical practices sets them apart. They consistently deliver solutions that exceed expectations while maintaining the highest professional standards.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                <h3>Saul Goodman</h3>
+                <h4>Ceo &amp; Founder</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Their attention to detail and genuine care for user experience makes them an outstanding collaborator. They bring both technical excellence and a positive attitude to every project, creating solutions that are both beautiful and functional.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                <h3>Sara Wilsson</h3>
+                <h4>Designer</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>What impressed me most was their integrity and transparency throughout our project. They communicate clearly, meet deadlines consistently, and always go the extra mile to ensure customer satisfaction. A truly reliable professional.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                <h3>Jena Karlis</h3>
+                <h4>Store Owner</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Their problem-solving approach is both methodical and creative. They listen carefully to requirements, ask thoughtful questions, and deliver solutions that are not just technically sound but also consider the human element. Highly recommended.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                <h3>Matt Brandon</h3>
+                <h4>Freelancer</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Their passion for continuous learning and growth is infectious. They stay current with technology while maintaining strong ethical principles. Working with them has been both productive and inspiring for our entire team.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                <h3>John Larson</h3>
+                <h4>Entrepreneur</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+
+    </section><!-- /Testimonials Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section contact-section-visible">
+
+      <!-- Section Title -->
+      <div class="container section-title">
+        <h2>Contact</h2>
+        <p>Ready to collaborate on meaningful projects that make a positive impact. Let's build something great together.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-5">
+
+            <div class="info-wrap">
+              <div class="info-item d-flex">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h3>Location</h3>
+                  <p>Available for remote work worldwide</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="info-item d-flex">
+                <i class="bi bi-telephone flex-shrink-0"></i>
+                <div>
+                  <h3>Connect</h3>
+                  <p>Available for consultation calls</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="info-item d-flex">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h3>Email</h3>
+                  <p>software.quaylynrimer@gmail.com</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50562.89567780706!2d-113.25142627832031!3d37.19859977343797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80caead08844e8ed%3A0x433701f9e3b75aa!2sVirgin%2C%20UT%2084779!5e0!3m2!1sen!2sus!4v1642789012345!5m2!1sen!2sus" frameborder="0" class="contact-iframe" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <form id="contact-form" class="php-email-form">
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <label for="name-field" class="pb-2">Your Name</label>
+                  <input type="text" name="name" id="name-field" class="form-control" required="">
+                </div>
+
+                <div class="col-md-6">
+                  <label for="email-field" class="pb-2">Your Email</label>
+                  <input type="email" class="form-control" name="email" id="email-field" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <label for="subject-field" class="pb-2">Subject</label>
+                  <input type="text" class="form-control" name="subject" id="subject-field" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <label for="message-field" class="pb-2">Message</label>
+                  <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                  <button type="submit">Send Message</button>
+                </div>
+
+              </div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+    <!--
+    <section id="services" class="services section">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Services</h2>
+        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+      </div>
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item item-cyan position-relative">
+              <i class="bi bi-activity icon"></i>
+              <h3>Nesciunt Mete</h3>
+              <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis tempore et consequatur.</p>
+              <a href="service-details.html" class="read-more stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item item-orange position-relative">
+              <i class="bi bi-broadcast icon"></i>
+              <h3>Eosle Commodi</h3>
+              <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
+              <a href="service-details.html" class="read-more stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item item-teal position-relative">
+              <i class="bi bi-easel icon"></i>
+              <h3>Ledo Markt</h3>
+              <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci eos earum corrupti.</p>
+              <a href="service-details.html" class="read-more stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item item-red position-relative">
+              <i class="bi bi-bounding-box-circles icon"></i>
+              <h3>Asperiores Commodit</h3>
+              <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident adipisci neque.</p>
+              <a href="service-details.html" class="read-more stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item item-indigo position-relative">
+              <i class="bi bi-calendar4-week icon"></i>
+              <h3>Velit Doloremque</h3>
+              <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at autem alias eius labore.</p>
+              <a href="service-details.html" class="read-more stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-item item-pink position-relative">
+              <i class="bi bi-chat-square-text icon"></i>
+              <h3>Dolori Architecto</h3>
+              <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
+              <a href="service-details.html" class="read-more stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+    -->
+
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+    <div class="container">
+      <!-- Footer content removed as requested -->
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js?v=20260907"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+[
+  {
+    "year": "2020",
+    "title": "Started Computer Science Degree",
+    "description": "Began undergraduate studies focusing on algorithms, data structures, and theoretical computer science.",
+    "technologies": ["Java", "Python", "Mathematics"]
+  },
+  {
+    "year": "2021",
+    "title": "Research Assistant Position",
+    "description": "Joined Dr. Smith's research lab working on distributed computing and parallel algorithms.",
+    "technologies": ["C++", "MPI", "OpenMP", "Linux"]
+  },
+  {
+    "year": "2022",
+    "title": "Machine Learning Specialization",
+    "description": "Completed advanced coursework in ML and AI, developed expertise in neural networks and optimization.",
+    "technologies": ["Python", "TensorFlow", "PyTorch", "R"]
+  },
+  {
+    "year": "2023",
+    "title": "Industry Internship",
+    "description": "Software engineering intern at TechCorp, worked on large-scale data processing systems.",
+    "technologies": ["Scala", "Apache Spark", "Kafka", "Docker"]
+  },
+  {
+    "year": "2024",
+    "title": "Graduate Studies & Research",
+    "description": "Started Master's program specializing in quantum computing and cryptography research.",
+    "technologies": ["Quantum Computing", "Cryptography", "Mathematical Analysis"]
+  }
+]

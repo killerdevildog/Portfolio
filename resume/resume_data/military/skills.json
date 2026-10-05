@@ -1,0 +1,37 @@
+{
+  "languages": [
+    {
+      "category": "Leadership & Management",
+      "skills": [
+        { "name": "Team Leadership", "level": 98, "years": 12 },
+        { "name": "Personnel Management", "level": 95, "years": 10 },
+        { "name": "Strategic Planning", "level": 90, "years": 8 },
+        { "name": "Crisis Management", "level": 95, "years": 12 },
+        { "name": "Training & Development", "level": 92, "years": 10 },
+        { "name": "Decision Making", "level": 96, "years": 12 }
+      ]
+    },
+    {
+      "category": "Military Operations",
+      "skills": [
+        { "name": "Mission Planning", "level": 95, "years": 10 },
+        { "name": "Tactical Operations", "level": 90, "years": 8 },
+        { "name": "Logistics Coordination", "level": 88, "years": 12 },
+        { "name": "Security Operations", "level": 92, "years": 10 },
+        { "name": "Risk Assessment", "level": 90, "years": 8 },
+        { "name": "Equipment Management", "level": 85, "years": 12 }
+      ]
+    },
+    {
+      "category": "Technical & Administrative",
+      "skills": [
+        { "name": "Military Communications", "level": 85, "years": 8 },
+        { "name": "Administrative Systems", "level": 80, "years": 10 },
+        { "name": "Budget Management", "level": 82, "years": 6 },
+        { "name": "Compliance & Regulations", "level": 90, "years": 12 },
+        { "name": "Quality Assurance", "level": 88, "years": 8 },
+        { "name": "Computer Systems", "level": 75, "years": 6 }
+      ]
+    }
+  ]
+}

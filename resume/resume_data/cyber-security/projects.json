@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Enterprise Security Assessment",
+    "description": "Conducted comprehensive penetration testing and vulnerability assessment for Fortune 500 company.",
+    "technologies": ["Nmap", "Metasploit", "Burp Suite", "Nessus"],
+    "status": "completed",
+    "highlights": [
+      "Identified 15 critical vulnerabilities",
+      "Developed remediation roadmap saving $2M in potential damages"
+    ]
+  },
+  {
+    "name": "SOC Automation Platform",
+    "description": "Built automated incident response system for Security Operations Center using SOAR principles.",
+    "technologies": ["Python", "SIEM", "REST APIs", "Docker"],
+    "status": "completed",
+    "highlights": [
+      "Reduced incident response time by 70%",
+      "Automated 80% of routine security tasks"
+    ]
+  },
+  {
+    "name": "Threat Intelligence Platform",
+    "description": "Developed threat intelligence gathering and analysis platform using OSINT and commercial feeds.",
+    "technologies": ["Python", "ElasticSearch", "Kibana", "MISP"],
+    "status": "in-progress",
+    "highlights": [
+      "Processes 10M+ threat indicators daily",
+      "Integrates with 15+ threat intelligence sources"
+    ]
+  },
+  {
+    "name": "Zero Trust Network Implementation",
+    "description": "Designed and implemented zero trust architecture for mid-size enterprise network.",
+    "technologies": ["Palo Alto", "Okta", "Azure AD", "Network Segmentation"],
+    "status": "completed",
+    "highlights": [
+      "Reduced attack surface by 85%",
+      "Improved compliance posture for SOC 2 audit"
+    ]
+  }
+]

@@ -1,0 +1,39 @@
+[
+  {
+    "institution": "State University",
+    "degree": "Bachelor of Arts in Business Administration",
+    "field": "Business Administration",
+    "graduationDate": "2022",
+    "gpa": "3.5/4.0",
+    "honors": ["Dean's List", "Phi Beta Kappa"],
+    "relevantCoursework": [
+      "Project Management",
+      "Business Analytics",
+      "Leadership Studies",
+      "Marketing Strategy",
+      "Financial Management",
+      "Operations Management"
+    ],
+    "projects": [
+      {
+        "name": "Business Process Improvement",
+        "description": "Led team project to optimize local business operations resulting in 20% efficiency gain"
+      }
+    ]
+  },
+  {
+    "institution": "Community College",
+    "degree": "Associate of Science",
+    "field": "General Studies",
+    "graduationDate": "2020",
+    "gpa": "3.7/4.0",
+    "honors": ["Magna Cum Laude"],
+    "relevantCoursework": [
+      "Computer Applications",
+      "Communications",
+      "Mathematics",
+      "Psychology",
+      "Economics"
+    ]
+  }
+]

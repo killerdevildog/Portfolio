@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Dr. Sarah Chen",
+    "title": "Professor of Computer Science",
+    "company": "State University",
+    "email": "s.chen@university.edu",
+    "phone": "(555) 123-4567",
+    "relationship": "Research Supervisor"
+  },
+  {
+    "name": "Dr. Michael Rodriguez",
+    "title": "Senior Research Scientist",
+    "company": "TechCorp Research Labs",
+    "email": "m.rodriguez@techcorp.com",
+    "phone": "(555) 234-5678",
+    "relationship": "Internship Mentor"
+  },
+  {
+    "name": "Prof. Jennifer Wang",
+    "title": "Associate Professor of Mathematics",
+    "company": "State University",
+    "email": "j.wang@university.edu",
+    "phone": "(555) 345-6789",
+    "relationship": "Academic Advisor"
+  }
+]

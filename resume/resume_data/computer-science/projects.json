@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Distributed Graph Algorithm Implementation",
+    "description": "Implemented and analyzed distributed algorithms for graph traversal and shortest path problems using MPI and OpenMP.",
+    "technologies": ["C++", "MPI", "OpenMP", "Graph Theory"],
+    "status": "completed",
+    "highlights": [
+      "Achieved 85% performance improvement over serial implementation",
+      "Published findings in ACM conference proceedings"
+    ]
+  },
+  {
+    "name": "Machine Learning Framework for Time Series",
+    "description": "Developed a custom ML framework optimized for time series forecasting using ensemble methods and neural networks.",
+    "technologies": ["Python", "TensorFlow", "NumPy", "Pandas"],
+    "status": "completed",
+    "highlights": [
+      "Outperformed existing models by 15% accuracy",
+      "Used in real-world financial prediction system"
+    ]
+  },
+  {
+    "name": "Quantum Computing Simulator",
+    "description": "Built a quantum circuit simulator to study quantum algorithms and their classical complexity.",
+    "technologies": ["Python", "Qiskit", "Linear Algebra", "Quantum Computing"],
+    "status": "in-progress",
+    "highlights": [
+      "Simulates up to 20-qubit quantum circuits",
+      "Implements Shor's and Grover's algorithms"
+    ]
+  },
+  {
+    "name": "Compiler Optimization Research",
+    "description": "Research project on advanced compiler optimization techniques for modern multi-core processors.",
+    "technologies": ["LLVM", "C++", "Assembly", "Performance Analysis"],
+    "status": "completed",
+    "highlights": [
+      "Developed novel loop optimization technique",
+      "20% reduction in execution time for scientific computing workloads"
+    ]
+  }
+]

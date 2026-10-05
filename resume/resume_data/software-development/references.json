@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Sarah Johnson",
+    "title": "Senior Software Engineering Manager",
+    "company": "TechCorp Solutions",
+    "phone": "+1 (555) 987-6543",
+    "email": "sarah.johnson@techcorp.com",
+    "relationship": "Former Manager",
+    "description": "Managed my team for 2 years during web application development projects"
+  },
+  {
+    "name": "Michael Chen",
+    "title": "Lead Frontend Developer",
+    "company": "Digital Innovations Inc",
+    "phone": "+1 (555) 456-7890",
+    "email": "m.chen@digitalinnovations.com",
+    "relationship": "Team Lead",
+    "description": "Collaborated closely on React.js and Node.js projects for 18 months"
+  },
+  {
+    "name": "Dr. Emily Rodriguez",
+    "title": "Computer Science Professor",
+    "company": "University of Technology",
+    "phone": "+1 (555) 321-0987",
+    "email": "e.rodriguez@universitytech.edu",
+    "relationship": "Academic Advisor",
+    "description": "Provided guidance during independent study projects and research"
+  }
+]

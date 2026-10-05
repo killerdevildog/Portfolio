@@ -1,0 +1,46 @@
+[
+  {
+    "name": "Digital Marketing Campaign",
+    "description": "Led comprehensive digital marketing strategy for local nonprofit, increasing online engagement by 150%.",
+    "technologies": ["Social Media", "Google Analytics", "Content Creation", "SEO"],
+    "status": "completed",
+    "highlights": [
+      "Increased website traffic by 200%",
+      "Generated $50K in additional donations",
+      "Campaign featured in local business journal"
+    ]
+  },
+  {
+    "name": "Process Improvement Initiative",
+    "description": "Analyzed and optimized workflow processes for medium-sized manufacturing company.",
+    "technologies": ["Process Analysis", "Data Collection", "Microsoft Office", "Lean Principles"],
+    "status": "completed",
+    "highlights": [
+      "Reduced processing time by 30%",
+      "Saved company $75K annually",
+      "Trained 25+ employees on new procedures"
+    ]
+  },
+  {
+    "name": "Community Volunteer Coordination",
+    "description": "Organized and managed volunteer program for local food bank serving 500+ families monthly.",
+    "technologies": ["Volunteer Management", "Event Planning", "Database Management", "Communication"],
+    "status": "in-progress",
+    "highlights": [
+      "Coordinated 50+ volunteers weekly",
+      "Increased food distribution efficiency by 40%",
+      "Established sustainable volunteer recruitment program"
+    ]
+  },
+  {
+    "name": "Small Business Consulting",
+    "description": "Provided business consulting services to help local retailers adapt to e-commerce during pandemic.",
+    "technologies": ["Business Analysis", "E-commerce", "Strategic Planning", "Customer Relations"],
+    "status": "completed",
+    "highlights": [
+      "Helped 10+ businesses transition online",
+      "Average 60% increase in sales",
+      "Developed reusable transition framework"
+    ]
+  }
+]

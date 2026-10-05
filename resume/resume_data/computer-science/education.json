@@ -1,0 +1,38 @@
+[
+  {
+    "institution": "University of Example",
+    "degree": "Master of Science in Computer Science",
+    "field": "Computer Science",
+    "graduationDate": "2024",
+    "gpa": "3.8/4.0",
+    "honors": ["Summa Cum Laude", "Dean's List"],
+    "relevantCoursework": [
+      "Advanced Algorithms",
+      "Machine Learning",
+      "Database Systems",
+      "Computer Networks",
+      "Software Engineering"
+    ],
+    "projects": [
+      {
+        "name": "Distributed Computing Research",
+        "description": "Research project on optimization algorithms for distributed systems"
+      }
+    ]
+  },
+  {
+    "institution": "State University",
+    "degree": "Bachelor of Science in Computer Science",
+    "field": "Computer Science",
+    "graduationDate": "2022",
+    "gpa": "3.7/4.0",
+    "honors": ["Magna Cum Laude"],
+    "relevantCoursework": [
+      "Data Structures",
+      "Computer Architecture",
+      "Operating Systems",
+      "Programming Languages",
+      "Discrete Mathematics"
+    ]
+  }
+]

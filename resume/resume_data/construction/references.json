@@ -1,0 +1,26 @@
+[
+  {
+    "name": "David Johnson",
+    "title": "Senior Project Manager",
+    "company": "BuildCorp Construction",
+    "email": "d.johnson@buildcorp.com",
+    "phone": "(555) 456-7890",
+    "relationship": "Former Supervisor"
+  },
+  {
+    "name": "Maria Gonzalez",
+    "title": "Construction Division Manager",
+    "company": "Metro Development Group",
+    "email": "m.gonzalez@metrodev.com",
+    "phone": "(555) 567-8901",
+    "relationship": "Current Manager"
+  },
+  {
+    "name": "Tom Wilson",
+    "title": "Safety Director",
+    "company": "SafeBuild Industries",
+    "email": "t.wilson@safebuild.com",
+    "phone": "(555) 678-9012",
+    "relationship": "Professional Contact"
+  }
+]

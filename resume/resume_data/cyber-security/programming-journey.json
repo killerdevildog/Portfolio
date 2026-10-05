@@ -1,0 +1,38 @@
+[
+  {
+    "year": "2019",
+    "title": "Started Security Interest",
+    "description": "Began self-study in cybersecurity through online courses and Capture The Flag competitions.",
+    "technologies": ["Linux", "Networking", "Basic Python"]
+  },
+  {
+    "year": "2020",
+    "title": "First Security Internship",
+    "description": "Junior SOC analyst intern, learned SIEM tools and incident response procedures.",
+    "technologies": ["Splunk", "Wireshark", "Windows Security", "PowerShell"]
+  },
+  {
+    "year": "2021",
+    "title": "Penetration Testing Focus",
+    "description": "Specialized in offensive security, completed OSCP certification and ethical hacking courses.",
+    "technologies": ["Kali Linux", "Metasploit", "Burp Suite", "Custom Exploits"]
+  },
+  {
+    "year": "2022",
+    "title": "Security Engineer Role",
+    "description": "Full-time security engineer focusing on vulnerability management and security architecture.",
+    "technologies": ["Nessus", "Qualys", "AWS Security", "Terraform"]
+  },
+  {
+    "year": "2023",
+    "title": "Advanced Threat Hunting",
+    "description": "Specialized in advanced persistent threat detection and malware analysis.",
+    "technologies": ["YARA", "Volatility", "IDA Pro", "Threat Intelligence"]
+  },
+  {
+    "year": "2024",
+    "title": "Security Consultant",
+    "description": "Independent security consultant helping organizations improve their security posture.",
+    "technologies": ["GRC", "Risk Assessment", "Security Frameworks", "Executive Reporting"]
+  }
+]

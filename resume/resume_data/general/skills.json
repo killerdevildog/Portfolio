@@ -1,0 +1,25 @@
+{
+  "languages": [
+    {
+      "category": "Technical Skills",
+      "skills": [
+        { "name": "Problem Solving", "level": 95, "years": 10 },
+        { "name": "Project Management", "level": 90, "years": 8 },
+        { "name": "Team Leadership", "level": 85, "years": 6 },
+        { "name": "Communication", "level": 90, "years": 10 },
+        { "name": "Critical Thinking", "level": 88, "years": 8 },
+        { "name": "Adaptability", "level": 92, "years": 10 }
+      ]
+    },
+    {
+      "category": "Computer Skills",
+      "skills": [
+        { "name": "Microsoft Office", "level": 85, "years": 8 },
+        { "name": "Data Analysis", "level": 80, "years": 5 },
+        { "name": "Digital Marketing", "level": 75, "years": 3 },
+        { "name": "Basic Programming", "level": 70, "years": 4 },
+        { "name": "Database Management", "level": 75, "years": 4 }
+      ]
+    }
+  ]
+}

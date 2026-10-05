@@ -1,0 +1,14 @@
+{
+  "skills": {
+    "HTML": 95,
+    "CSS": 88,
+    "JavaScript": 82,
+    "C++": 92,
+    "Python": 70,
+    "PHP": 65,
+    "C": 60,
+    "CMake": 45
+  },
+  "description": "Technical competence levels for resume display",
+  "last_updated": "2025-07-26"
+}

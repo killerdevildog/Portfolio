@@ -1,0 +1,65 @@
+{
+  "resumeTypes": {
+    "software-development": {
+      "label": "Software Development",
+      "description": "Full-stack development, programming, and software engineering",
+      "icon": "fas fa-code",
+      "color": "#4A90E2",
+      "sectionTitles": {
+        "contributions": "Open Source Contributions",
+        "timeline": "Programming Journey"
+      }
+    },
+    "computer-science": {
+      "label": "Computer Science",
+      "description": "Algorithms, data structures, research, and academic focus",
+      "icon": "fas fa-laptop-code",
+      "color": "#7B68EE",
+      "sectionTitles": {
+        "contributions": "Research & Academic Contributions",
+        "timeline": "Academic Journey"
+      }
+    },
+    "cyber-security": {
+      "label": "Cyber Security",
+      "description": "Information security, penetration testing, and risk assessment",
+      "icon": "fas fa-shield-alt",
+      "color": "#E74C3C",
+      "sectionTitles": {
+        "contributions": "Security Projects & Contributions",
+        "timeline": "Cybersecurity Journey"
+      }
+    },
+    "construction": {
+      "label": "Construction",
+      "description": "Project management, site supervision, and building trades",
+      "icon": "fas fa-hard-hat",
+      "color": "#F39C12",
+      "sectionTitles": {
+        "contributions": "Key Projects & Achievements",
+        "timeline": "Career Timeline"
+      }
+    },
+    "general": {
+      "label": "General",
+      "description": "Multi-disciplinary experience and transferable skills",
+      "icon": "fas fa-user-tie",
+      "color": "#2ECC71",
+      "sectionTitles": {
+        "contributions": "Key Achievements & Projects",
+        "timeline": "Professional Journey"
+      }
+    },
+    "military": {
+      "label": "Military",
+      "description": "Military service, leadership, and veteran transition experience",
+      "icon": "fas fa-medal",
+      "color": "#8B4513",
+      "sectionTitles": {
+        "contributions": "Military Achievements & Operations",
+        "timeline": "Military Service & Career"
+      }
+    }
+  },
+  "defaultResume": "software-development"
+}

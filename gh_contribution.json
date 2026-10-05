@@ -1,0 +1,27 @@
+{
+  "skills": {
+    "HTML": 95,
+    "CSS": 88,
+    "JavaScript": 82,
+    "C++": 92,
+    "Python": 70,
+    "PHP": 65,
+    "C": 60,
+    "CMake": 45,
+    "Shell": 55,
+    "Photoshop": 55
+  },
+  "languages": {
+    "C++": 39.1,
+    "C": 18.4,
+    "Python": 15.2,
+    "CMake": 9.1,
+    "Vala": 6.1,
+    "Rust": 3.0,
+    "Go": 3.0,
+    "Java": 3.0,
+    "Perl": 3.0
+  },
+  "last_updated": "2026-10-04",
+  "languages_basis": "Merged pull requests in pull_requests.json, each counted once and split by changed lines"
+}

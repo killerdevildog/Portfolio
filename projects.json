@@ -1,0 +1,671 @@
+[
+  {
+    "id": "arthursonzogni--ftxui",
+    "name": "ArthurSonzogni/FTXUI",
+    "title": "Contributions to FTXUI",
+    "description": ":computer: C++ Functional Terminal User Interface. :heart:",
+    "technologies": [
+      "C++"
+    ],
+    "githubUrl": "https://github.com/ArthurSonzogni/FTXUI",
+    "category": "open source",
+    "status": "merged",
+    "featured": false,
+    "contributions": [
+      {
+        "title": "perf: replace stringstream with pre-allocated string append in Screen\u2026",
+        "url": "https://github.com/ArthurSonzogni/FTXUI/pull/1188",
+        "number": 1188,
+        "merged_at": "2026-02-15T13:09:41Z"
+      }
+    ]
+  },
+  {
+    "id": "bkaradzic--bgfx",
+    "name": "bkaradzic/bgfx",
+    "title": "Contributions to bgfx",
+    "description": "Cross-platform, graphics API agnostic, \"Bring Your Own Engine/Framework\" style rendering library.",
+    "technologies": [
+      "C++"
+    ],
+    "githubUrl": "https://github.com/bkaradzic/bgfx",
+    "category": "open source",
+    "status": "merged",
+    "featured": false,
+    "contributions": [
+      {
+        "title": "Optimize NonLocalAllocator: sorted vector + immediate coalescing",
+        "url": "https://github.com/bkaradzic/bgfx/pull/3593",
+        "number": 3593,
+        "merged_at": "2026-02-17T19:27:10Z"
+      },
+      {
+        "title": "Feature/d3d4linux integration",
+        "url": "https://github.com/bkaradzic/bgfx/pull/3578",
+        "number": 3578,
+        "merged_at": "2026-02-06T16:28:04Z"
+      }
+    ]
+  },
+  {
+    "id": "cycfi--elements",
+    "name": "cycfi/elements",
+    "title": "Contributions to elements",
+    "description": "Elements C++ GUI library",
+    "technologies": [
+      "C++"
+    ],
+    "githubUrl": "https://github.com/cycfi/elements",
+    "category": "open source",
+    "status": "merged",
+    "featured": false,
+    "contributions": [
+      {
+        "title": "fix: Remove duplicate source file entries in CMakeLists.txt",
+        "url": "https://github.com/cycfi/elements/pull/438",
+        "number": 438,
+        "merged_at": "2025-07-18T11:44:48Z"
+      }
+    ]
+  },
+  {
+    "id": "encode--django-rest-framework",
+    "name": "encode/django-rest-framework",
+    "title": "Contributions to django-rest-framework",
+    "description": "Web APIs for Django. \ud83c\udfb8",
+    "technologies": [
+      "Python"
+    ],
+    "githubUrl": "https://github.com/encode/django-rest-framework",
+    "category": "open source",
+    "status": "merged",
+    "featured": false,
+    "contributions": [
+      {
+        "title": "Fix mutable default arguments in OrderingFilter methods",
+        "url": "https://github.com/encode/django-rest-framework/pull/9742",
+        "number": 9742,
+        "merged_at": "2025-10-30T16:07:24Z"
+      }
+    ]
+  },
+  {
+    "id": "ezengine--ezengine",
+    "name": "ezEngine/ezEngine",
+    "title": "Contributions to ezEngine",
+    "description": "An open source C++ game engine.",
+    "technologies": [
+      "C++"
+    ],
+    "githubUrl": "https://github.com/ezEngine/ezEngine",
+    "category": "open source",
+    "status": "merged",
+    "featured": false,
+    "contributions": [
+      {
+        "title": "Implement proper packaging for ShaderExplorer sample",
+        "url": "https://github.com/ezEngine/ezEngine/pull/1613",
+        "number": 1613,
+        "merged_at": "2025-07-18T04:38:29Z"
+      }
+    ]
+  },
+  {
+    "id": "flaxengine--flaxengine",
+    "name": "FlaxEngine/FlaxEngine",
+    "title": "Contributions to FlaxEngine",
+    "description": "Flax Engine \u2013 multi-platform 3D game engine",
+    "technologies": [
+      "C++"
+    ],
+    "githubUrl": "https://github.com/FlaxEngine/FlaxEngine",
+    "category": "open source",
+    "status": "merged",
+    "featured": false,
+    "contributions": [
+      {
+        "title": "Fix ParseFloat rejecting a '+' sign in the exponent",
+        "url": "https://github.com/FlaxEngine/FlaxEngine/pull/4262",
+        "number": 4262,
+        "merged_at": "2026-09-14T05:08:04Z"
+      }
+    ]
+  },
+  {
+    "id": "g3n--engine",
+    "name": "g3n/engine",
+    "title": "Contributions to engine",
+    "description": "Go 3D Game Engine (http://g3n.rocks)",
+    "technologies": [
+      "Go"
+    ],
+    "githubUrl": "https://github.com/g3n/engine",
+    "category": "open source",
+    "status": "merged",
+    "featured": false,
+    "contributions": [
+      {
+        "title": "fix: use IsNaN() instead of == NaN() comparison in Ray.IntersectPlane",
+        "url": "https://github.com/g3n/engine/pull/317",
+        "number": 317,
+        "merged_at": "2026-01-09T20:45:53Z"
+      }
+    ]
+  },
+  {
+    "id": "is-daouda--is-engine",
+    "name": "Is-Daouda/is-Engine",
+    "title": "Contributions to is-Engine",
+    "description": "C++, SDL 2 and SFML game engine that allows to create games on Nintendo Switch, Web (HTML 5), Mobile and PC.",
+    "technologies": [
+      "C"
+    ],
+    "githubUrl": "https://github.com/Is-Daouda/is-Engine",
+    "category": "open source",
+    "status": "merged",
+    "featured": false,
+    "contributions": [
+      {
+        "title": "Fix MainObject::setXOffset() overwriting the Y offset",
+        "url": "https://github.com/Is-Daouda/is-Engine/pull/10",
+        "number": 10,
+        "merged_at": "2026-09-14T16:48:45Z"
+      }
+    ]
+  },
+  {
+    "id": "libresprite--libresprite",
+    "name": "LibreSprite/LibreSprite",
+    "title": "Contributions to LibreSprite",
+    "description": "Animated sprite editor & pixel art tool -- Fork of the last GPLv2 commit of Aseprite",
+    "technologies": [
+      "C++"
+    ],
+    "githubUrl": "https://github.com/LibreSprite/LibreSprite",
+    "category": "open source",
+    "status": "merged",
+    "featured": false,
+    "contributions": [
+      {
+        "title": "Fix sprite height reported by crash recovery",
+        "url": "https://github.com/LibreSprite/LibreSprite/pull/649",
+        "number": 649,
+        "merged_at": "2026-09-13T08:17:15Z"
+      }
+    ]
+  },
+  {
+    "id": "libuv--libuv",
+    "name": "libuv/libuv",
+    "title": "Contributions to libuv",
+    "description": "Cross-platform asynchronous I/O",
+    "technologies": [
+      "C"
+    ],
+    "githubUrl": "https://github.com/libuv/libuv",
+    "category": "open source",
+    "status": "merged",
+    "featured": false,
+    "contributions": [
+      {
+        "title": "Fix const-correctness warning in linux.c",
+        "url": "https://github.com/libuv/libuv/pull/4843",
+        "number": 4843,
+        "merged_at": "2026-02-21T01:20:15Z"
+      }
+    ]
+  },
+  {
+    "id": "linebender--resvg",
+    "name": "linebender/resvg",
+    "title": "Contributions to resvg",
+    "description": "An SVG rendering library.",
+    "technologies": [
+      "Rust"
+    ],
+    "githubUrl": "https://github.com/linebender/resvg",
+    "category": "open source",
+    "status": "merged",
+    "featured": false,
+    "contributions": [
+      {
+        "title": "fix(usvg): inherit `gradientTransform` and `patternTransform` via `href`",
+        "url": "https://github.com/linebender/resvg/pull/1135",
+        "number": 1135,
+        "merged_at": "2026-10-03T06:56:49Z"
+      }
+    ]
+  },
+  {
+    "id": "matrixcascade--painterengine",
+    "name": "matrixcascade/PainterEngine",
+    "title": "Contributions to PainterEngine",
+    "description": "PainterEngine is a application/game engine with software renderer,PainterEngine can be transplanted to any platform that supports C",
+    "technologies": [
+      "C"
+    ],
+    "githubUrl": "https://github.com/matrixcascade/PainterEngine",
+    "category": "open source",
+    "status": "merged",
+    "featured": false,
+    "contributions": [
+      {
+        "title": "Fix web keyboard input for shift+number and numpad keys",
+        "url": "https://github.com/matrixcascade/PainterEngine/pull/144",
+        "number": 144,
+        "merged_at": "2025-08-04T01:16:29Z"
+      }
+    ]
+  },
+  {
+    "id": "methusalah--openrts",
+    "name": "methusalah/OpenRTS",
+    "title": "Contributions to OpenRTS",
+    "description": "Real-Time Strategy game 3D engine coded in pure java",
+    "technologies": [
+      "Java"
+    ],
+    "githubUrl": "https://github.com/methusalah/OpenRTS",
+    "category": "open source",
+    "status": "merged",
+    "featured": false,
+    "contributions": [
+      {
+        "title": "Cumulative updates",
+        "url": "https://github.com/methusalah/OpenRTS/pull/117",
+        "number": 117,
+        "merged_at": "2025-09-05T15:59:47Z"
+      }
+    ]
+  },
+  {
+    "id": "microsoft--terminal",
+    "name": "microsoft/terminal",
+    "title": "Contributions to terminal",
+    "description": "The new Windows Terminal and the original Windows console host, all in the same place!",
+    "technologies": [
+      "C++"
+    ],
+    "githubUrl": "https://github.com/microsoft/terminal",
+    "category": "open source",
+    "status": "merged",
+    "featured": false,
+    "contributions": [
+      {
+        "title": "Fix/scrollbar marks shell integration",
+        "url": "https://github.com/microsoft/terminal/pull/19185",
+        "number": 19185,
+        "merged_at": "2025-07-29T17:20:48Z"
+      }
+    ]
+  },
+  {
+    "id": "mygui--mygui",
+    "name": "MyGUI/mygui",
+    "title": "Contributions to mygui",
+    "description": "Fast, flexible and simple GUI.",
+    "technologies": [
+      "C++"
+    ],
+    "githubUrl": "https://github.com/MyGUI/mygui",
+    "category": "open source",
+    "status": "merged",
+    "featured": false,
+    "contributions": [
+      {
+        "title": "Enable CMake testing infrastructure for unit tests",
+        "url": "https://github.com/MyGUI/mygui/pull/289",
+        "number": 289,
+        "merged_at": "2025-08-02T23:03:39Z"
+      }
+    ]
+  },
+  {
+    "id": "nasa--exominer",
+    "name": "nasa/ExoMiner",
+    "title": "Contributions to ExoMiner",
+    "description": "Automating the vetting and validation of planet candidates from photometry survey missions - Kepler and TESS - using deep learning methods",
+    "technologies": [
+      "Python"
+    ],
+    "githubUrl": "https://github.com/nasa/ExoMiner",
+    "category": "open source",
+    "status": "merged",
+    "featured": false,
+    "contributions": [
+      {
+        "title": "Fix tic ids csv structure check",
+        "url": "https://github.com/nasa/ExoMiner/pull/2",
+        "number": 2,
+        "merged_at": "2025-07-23T18:23:55Z"
+      }
+    ]
+  },
+  {
+    "id": "nem0--lumixengine",
+    "name": "nem0/LumixEngine",
+    "title": "Contributions to LumixEngine",
+    "description": "3D C++ Game Engine - yet another open source game engine",
+    "technologies": [
+      "C++"
+    ],
+    "githubUrl": "https://github.com/nem0/LumixEngine",
+    "category": "open source",
+    "status": "merged",
+    "featured": false,
+    "contributions": [
+      {
+        "title": "perf: replace O(n\u00b2) GPUProfiler erase(0) loop with cursor + eraseRange",
+        "url": "https://github.com/nem0/LumixEngine/pull/1538",
+        "number": 1538,
+        "merged_at": "2026-02-15T09:33:18Z"
+      }
+    ]
+  },
+  {
+    "id": "opencv--opencv",
+    "name": "opencv/opencv",
+    "title": "Contributions to opencv",
+    "description": "Open Source Computer Vision Library",
+    "technologies": [
+      "C++"
+    ],
+    "githubUrl": "https://github.com/opencv/opencv",
+    "category": "open source",
+    "status": "merged",
+    "featured": false,
+    "contributions": [
+      {
+        "title": "Fix Python Scalar typing issue #27528",
+        "url": "https://github.com/opencv/opencv/pull/27620",
+        "number": 27620,
+        "merged_at": "2025-09-10T13:47:13Z"
+      }
+    ]
+  },
+  {
+    "id": "openkore--openkore",
+    "name": "OpenKore/openkore",
+    "title": "Contributions to openkore",
+    "description": "A free/open source client and automation tool for Ragnarok Online",
+    "technologies": [
+      "Perl"
+    ],
+    "githubUrl": "https://github.com/OpenKore/openkore",
+    "category": "open source",
+    "status": "merged",
+    "featured": false,
+    "contributions": [
+      {
+        "title": "Make maxWalkPath configurable in Field.pm",
+        "url": "https://github.com/OpenKore/openkore/pull/4070",
+        "number": 4070,
+        "merged_at": "2025-08-16T12:44:45Z"
+      }
+    ]
+  },
+  {
+    "id": "openloco--openloco",
+    "name": "OpenLoco/OpenLoco",
+    "title": "Contributions to OpenLoco",
+    "description": "An open source re-implementation of Chris Sawyer's Locomotion",
+    "technologies": [
+      "C++"
+    ],
+    "githubUrl": "https://github.com/OpenLoco/OpenLoco",
+    "category": "open source",
+    "status": "merged",
+    "featured": false,
+    "contributions": [
+      {
+        "title": "Add forEachLoaded<T> helper function for object iteration",
+        "url": "https://github.com/OpenLoco/OpenLoco/pull/3614",
+        "number": 3614,
+        "merged_at": "2026-07-23T01:53:33Z"
+      }
+    ]
+  },
+  {
+    "id": "opentoonz--opentoonz",
+    "name": "opentoonz/opentoonz",
+    "title": "Contributions to opentoonz",
+    "description": "OpenToonz - An open-source full-featured 2D animation creation software",
+    "technologies": [
+      "C++"
+    ],
+    "githubUrl": "https://github.com/opentoonz/opentoonz",
+    "category": "open source",
+    "status": "merged",
+    "featured": false,
+    "contributions": [
+      {
+        "title": "Fix scientific notation in expression tokenizer",
+        "url": "https://github.com/opentoonz/opentoonz/pull/7113",
+        "number": 7113,
+        "merged_at": "2026-09-10T02:00:40Z"
+      }
+    ]
+  },
+  {
+    "id": "phase1geo--minder",
+    "name": "phase1geo/Minder",
+    "title": "Contributions to Minder",
+    "description": "Mind-mapping application for Elementary OS",
+    "technologies": [
+      "Vala"
+    ],
+    "githubUrl": "https://github.com/phase1geo/Minder",
+    "category": "open source",
+    "status": "merged",
+    "featured": false,
+    "contributions": [
+      {
+        "title": "Fix image resize crash in set_width method",
+        "url": "https://github.com/phase1geo/Minder/pull/659",
+        "number": 659,
+        "merged_at": "2025-08-03T04:16:58Z"
+      },
+      {
+        "title": "Fix tab right-click crash (issue #655): add defensive null checks to \u2026",
+        "url": "https://github.com/phase1geo/Minder/pull/656",
+        "number": 656,
+        "merged_at": "2025-07-20T19:49:10Z"
+      }
+    ]
+  },
+  {
+    "id": "profanity-im--profanity",
+    "name": "profanity-im/profanity",
+    "title": "Contributions to profanity",
+    "description": "Ncurses based XMPP client",
+    "technologies": [
+      "C"
+    ],
+    "githubUrl": "https://github.com/profanity-im/profanity",
+    "category": "open source",
+    "status": "merged",
+    "featured": false,
+    "contributions": [
+      {
+        "title": "Fix GPGME >= 2.0.0 compatibility issue #2048",
+        "url": "https://github.com/profanity-im/profanity/pull/2050",
+        "number": 2050,
+        "merged_at": "2025-07-23T07:00:17Z"
+      }
+    ]
+  },
+  {
+    "id": "pypa--wheel",
+    "name": "pypa/wheel",
+    "title": "Contributions to wheel",
+    "description": "The official binary distribution format for Python",
+    "technologies": [
+      "Python"
+    ],
+    "githubUrl": "https://github.com/pypa/wheel",
+    "category": "open source",
+    "status": "merged",
+    "featured": false,
+    "contributions": [
+      {
+        "title": "Add wheel info subcommand",
+        "url": "https://github.com/pypa/wheel/pull/669",
+        "number": 669,
+        "merged_at": "2026-02-15T18:18:56Z"
+      }
+    ]
+  },
+  {
+    "id": "raysan5--raylib",
+    "name": "raysan5/raylib",
+    "title": "Contributions to raylib",
+    "description": "A simple and easy-to-use library to enjoy videogames programming",
+    "technologies": [
+      "C"
+    ],
+    "githubUrl": "https://github.com/raysan5/raylib",
+    "category": "open source",
+    "status": "merged",
+    "featured": false,
+    "contributions": [
+      {
+        "title": "[rcore] Fix ComputeSHA256() wrong hash when message length mod 64 is 56..59",
+        "url": "https://github.com/raysan5/raylib/pull/6144",
+        "number": 6144,
+        "merged_at": "2026-09-12T08:24:51Z"
+      },
+      {
+        "title": "[build] Add ARM64 support to Linux builds",
+        "url": "https://github.com/raysan5/raylib/pull/5075",
+        "number": 5075,
+        "merged_at": "2025-08-01T18:07:56Z"
+      }
+    ]
+  },
+  {
+    "id": "thephysicsguys--physics3d",
+    "name": "ThePhysicsGuys/Physics3D",
+    "title": "Contributions to Physics3D",
+    "description": "A 3D physics engine",
+    "technologies": [
+      "C++"
+    ],
+    "githubUrl": "https://github.com/ThePhysicsGuys/Physics3D",
+    "category": "open source",
+    "status": "merged",
+    "featured": false,
+    "contributions": [
+      {
+        "title": "Fix cylinder point containment",
+        "url": "https://github.com/ThePhysicsGuys/Physics3D/pull/28",
+        "number": 28,
+        "merged_at": "2026-09-21T17:43:22Z"
+      }
+    ]
+  },
+  {
+    "id": "tinygs--tinygs",
+    "name": "tinygs/tinyGS",
+    "title": "Contributions to tinyGS",
+    "description": "\ud83d\udce1 Open Ground Station Network  \ud83d\udef0",
+    "technologies": [
+      "C"
+    ],
+    "githubUrl": "https://github.com/tinygs/tinyGS",
+    "category": "open source",
+    "status": "merged",
+    "featured": false,
+    "contributions": [
+      {
+        "title": "fix: add missing break in RADIO_SX1280 switch case",
+        "url": "https://github.com/tinygs/tinyGS/pull/306",
+        "number": 306,
+        "merged_at": "2026-03-17T22:15:03Z"
+      }
+    ]
+  },
+  {
+    "id": "tornadoweb--tornado",
+    "name": "tornadoweb/tornado",
+    "title": "Contributions to tornado",
+    "description": "Tornado is a Python web framework and asynchronous networking library, originally developed at FriendFeed.",
+    "technologies": [
+      "Python"
+    ],
+    "githubUrl": "https://github.com/tornadoweb/tornado",
+    "category": "open source",
+    "status": "merged",
+    "featured": false,
+    "contributions": [
+      {
+        "title": "Fix ValueError in file_uploader.py by converting @gen.coroutine to as\u2026",
+        "url": "https://github.com/tornadoweb/tornado/pull/3523",
+        "number": 3523,
+        "merged_at": "2025-08-05T20:18:17Z"
+      }
+    ]
+  },
+  {
+    "id": "ultimatepp--ultimatepp",
+    "name": "ultimatepp/ultimatepp",
+    "title": "Contributions to ultimatepp",
+    "description": "U++ is a C++ cross-platform rapid application development framework focused on programmer's productivity. It includes a set of libraries (GUI, SQL, Network etc.), and integrated development environment (TheIDE).",
+    "technologies": [
+      "C++"
+    ],
+    "githubUrl": "https://github.com/ultimatepp/ultimatepp",
+    "category": "open source",
+    "status": "merged",
+    "featured": false,
+    "contributions": [
+      {
+        "title": "Fix RichTxt::SetRefreshFrom logic (issue #137): move r_type assignmen\u2026",
+        "url": "https://github.com/ultimatepp/ultimatepp/pull/293",
+        "number": 293,
+        "merged_at": "2025-07-19T11:17:27Z"
+      }
+    ]
+  },
+  {
+    "id": "x-ege--xege",
+    "name": "x-ege/xege",
+    "title": "Contributions to xege",
+    "description": "Easy Graphics Engine",
+    "technologies": [
+      "C++"
+    ],
+    "githubUrl": "https://github.com/x-ege/xege",
+    "category": "open source",
+    "status": "merged",
+    "featured": false,
+    "contributions": [
+      {
+        "title": "Fix VECTOR3D::GetAngle() returning the supplement for obtuse angles",
+        "url": "https://github.com/x-ege/xege/pull/399",
+        "number": 399,
+        "merged_at": "2026-09-13T10:16:34Z"
+      }
+    ]
+  },
+  {
+    "id": "xissburg--edyn",
+    "name": "xissburg/edyn",
+    "title": "Contributions to edyn",
+    "description": "Edyn is a real-time physics engine organized as an ECS.",
+    "technologies": [
+      "C++"
+    ],
+    "githubUrl": "https://github.com/xissburg/edyn",
+    "category": "open source",
+    "status": "merged",
+    "featured": false,
+    "contributions": [
+      {
+        "title": "Fix polyhedron raycasts parallel to faces",
+        "url": "https://github.com/xissburg/edyn/pull/156",
+        "number": 156,
+        "merged_at": "2026-09-08T17:21:56Z"
+      }
+    ]
+  }
+]

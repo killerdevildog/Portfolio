@@ -1,0 +1,68 @@
+{
+  "tutorials": [
+    {
+      "id": 1,
+      "title": "C++ Programming Series",
+      "instructor": "The Cherno",
+      "completed": "March 2014",
+      "description": "100+ Episodes",
+      "category": "filter-cpp"
+    },
+    {
+      "id": 2,
+      "title": "JavaScript Fundamentals",
+      "instructor": "Net Ninja",
+      "completed": "August 2015",
+      "description": "35 Episodes",
+      "category": "filter-web"
+    },
+    {
+      "id": 3,
+      "title": "Assembly Language Programming",
+      "instructor": "Davy Wybiral",
+      "completed": "June 2012",
+      "description": "25 Episodes",
+      "category": "filter-systems"
+    },
+    {
+      "id": 4,
+      "title": "Node.js Complete Course",
+      "instructor": "Net Ninja",
+      "completed": "November 2016",
+      "description": "42 Episodes",
+      "category": "filter-web"
+    },
+    {
+      "id": 5,
+      "title": "React Complete Tutorial Series",
+      "instructor": "Net Ninja",
+      "completed": "January 2018",
+      "description": "38 Episodes",
+      "category": "filter-frameworks"
+    },
+    {
+      "id": 6,
+      "title": "OpenGL Graphics Programming",
+      "instructor": "The Cherno",
+      "completed": "May 2017",
+      "description": "55 Episodes",
+      "category": "filter-systems"
+    },
+    {
+      "id": 7,
+      "title": "Full Stack Web Development",
+      "instructor": "Traversy Media",
+      "completed": "October 2019",
+      "description": "65 Episodes",
+      "category": "filter-web"
+    },
+    {
+      "id": 8,
+      "title": "Python Django Framework",
+      "instructor": "Corey Schafer",
+      "completed": "March 2020",
+      "description": "45 Episodes",
+      "category": "filter-frameworks"
+    }
+  ]
+}

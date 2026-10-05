@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Add MITRE ATT&CK mapping",
+    "repository": "security-tools/threat-detection",
+    "additions": 189,
+    "deletions": 34,
+    "status": "merged",
+    "description": "Enhanced threat detection rules with MITRE framework mapping"
+  },
+  {
+    "title": "Improve vulnerability scanner accuracy",
+    "repository": "infosec/security-scanner",
+    "additions": 156,
+    "deletions": 78,
+    "status": "merged",
+    "description": "Reduced false positives in network vulnerability scanning"
+  }
+]

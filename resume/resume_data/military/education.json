@@ -1,0 +1,51 @@
+[
+  {
+    "institution": "Command and General Staff College",
+    "degree": "Master of Military Art and Science",
+    "field": "Military Leadership",
+    "graduationDate": "2018",
+    "gpa": "3.8/4.0",
+    "honors": ["Distinguished Graduate", "Honor Graduate"],
+    "relevantCoursework": [
+      "Strategic Leadership",
+      "Joint Operations",
+      "Military History",
+      "Ethics and Leadership",
+      "International Relations",
+      "Resource Management"
+    ],
+    "projects": [
+      {
+        "name": "Joint Operations Capstone",
+        "description": "Led strategic analysis of multi-national coalition operations in complex environments"
+      }
+    ],
+    "certifications": [
+      "Advanced Leadership Course",
+      "Airborne Qualified",
+      "Combat Lifesaver Certified"
+    ]
+  },
+  {
+    "institution": "United States Military Academy",
+    "degree": "Bachelor of Science",
+    "field": "Engineering Management",
+    "graduationDate": "2008",
+    "gpa": "3.6/4.0",
+    "honors": ["Dean's List", "Distinguished Cadet"],
+    "relevantCoursework": [
+      "Military Leadership",
+      "Engineering Systems",
+      "Project Management",
+      "Military History",
+      "Constitutional Law",
+      "Physical Geography"
+    ],
+    "militaryEducation": [
+      "Officer Basic Course",
+      "Ranger School",
+      "Captain's Career Course",
+      "Advanced Civil Schooling"
+    ]
+  }
+]

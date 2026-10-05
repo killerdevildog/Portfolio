@@ -1,0 +1,10 @@
+[
+  {
+    "title": "Improve process documentation",
+    "repository": "business-processes/documentation",
+    "additions": 123,
+    "deletions": 45,
+    "status": "merged",
+    "description": "Enhanced business process documentation for better clarity"
+  }
+]

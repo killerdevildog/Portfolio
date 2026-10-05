@@ -1,0 +1,38 @@
+[
+  {
+    "year": "2016",
+    "title": "Started as Construction Laborer",
+    "description": "Entry-level position learning basic construction skills, safety procedures, and trade fundamentals.",
+    "technologies": ["Hand Tools", "Safety Equipment", "Basic Construction"]
+  },
+  {
+    "year": "2018",
+    "title": "Promoted to Assistant Foreman",
+    "description": "Began supervising small crews and learning project coordination while completing technical degree.",
+    "technologies": ["Crew Management", "Blueprint Reading", "Quality Control"]
+  },
+  {
+    "year": "2020",
+    "title": "Construction Project Coordinator",
+    "description": "Graduated with construction management degree, took on project coordination responsibilities.",
+    "technologies": ["Project Management Software", "Scheduling", "Cost Control"]
+  },
+  {
+    "year": "2021",
+    "title": "Site Supervisor",
+    "description": "Promoted to site supervisor role, managing daily operations and safety compliance for major projects.",
+    "technologies": ["Site Management", "Safety Protocols", "Subcontractor Coordination"]
+  },
+  {
+    "year": "2022",
+    "title": "Project Manager",
+    "description": "Advanced to project manager, overseeing multiple projects and client relationships.",
+    "technologies": ["Multi-Project Management", "Client Relations", "Budget Management"]
+  },
+  {
+    "year": "2024",
+    "title": "Senior Construction Manager",
+    "description": "Current role managing large-scale projects and mentoring junior staff in construction best practices.",
+    "technologies": ["Strategic Planning", "Team Development", "Advanced Project Management"]
+  }
+]
